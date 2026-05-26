@@ -46,9 +46,10 @@ function fmtTime(t: string): string {
 }
 
 function BookingModal({
-  cls, date, userId, onClose, onBooked,
+  cls, date, userId, userEmail, userName, onClose, onBooked,
 }: {
   cls: ClassDisplay; date: string; userId: string;
+  userEmail: string; userName: string;
   onClose: () => void; onBooked: () => void;
 }) {
   const supabase = createClient();
@@ -74,6 +75,23 @@ function BookingModal({
     if (err) {
       setError(err.code === "23505" ? "You've already booked this class." : "Booking failed. Please try again.");
       return;
+    }
+    // Fire confirmation email (non-blocking)
+    if (userEmail) {
+      fetch("/api/bookings/confirm", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          userEmail, userName,
+          className: cls.name,
+          classType: cls.class_type,
+          instructor: cls.instructor,
+          startTime: cls.start_time,
+          durationMins: cls.duration_mins,
+          classDate: date,
+          isWaitlist: isFull,
+        }),
+      }).catch(() => {}); // fire-and-forget
     }
     setConfirmed(true);
     onBooked();
@@ -163,6 +181,8 @@ export default function TimetablePage() {
   const [classes, setClasses] = useState<ClassDisplay[]>([]);
   const [loading, setLoading] = useState(true);
   const [userId, setUserId] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [userName, setUserName] = useState("");
   const [refresh, setRefresh] = useState(0);
 
   const targetDate = getDateForDOW(ARRAY_TO_DOW[selectedDay]);
@@ -173,6 +193,8 @@ export default function TimetablePage() {
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) return;
       setUserId(user.id);
+      setUserEmail(user.email ?? "");
+      setUserName((user.user_metadata?.full_name as string | undefined) ?? "Member");
 
       const dow = ARRAY_TO_DOW[selectedDay];
       const date = getDateForDOW(dow);
@@ -367,6 +389,8 @@ export default function TimetablePage() {
               cls={bookingCls}
               date={targetDate}
               userId={userId}
+              userEmail={userEmail}
+              userName={userName}
               onClose={() => setBookingCls(null)}
               onBooked={() => { setBookingCls(null); setRefresh((r) => r + 1); }}
             />
