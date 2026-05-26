@@ -13,9 +13,9 @@ export default function ClassPreview() {
           style={{ backgroundImage: "url('/group_class.png')" }}
         />
 
-        {/* Card — floats bottom-left, capped width so image shows around it */}
+        {/* Card — floats bottom-left */}
         <div className="absolute bottom-6 left-6 sm:bottom-10 sm:left-10 w-[calc(100%-3rem)] sm:w-[calc(100%-5rem)] max-w-96 sm:w-100">
-          <div className="bg-[#f5f4f0] rounded-2xl p-5 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.18)]">
+          <div className="bg-[#f5f6f8] rounded-2xl p-5 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.18)]">
 
             {/* Subtitle */}
             <p className="text-gray-500 text-sm font-medium leading-relaxed mb-5">
@@ -30,12 +30,12 @@ export default function ClassPreview() {
             {/* Divider + Link */}
             <div className="border-t border-gray-300 pt-5">
               <Link href="/classes" className="group flex items-center justify-between no-underline">
-                <span className="text-[#111827] text-[15px] font-medium underline decoration-gray-400 underline-offset-4 group-hover:text-[#00cc70] group-hover:decoration-[#00cc70] transition-colors">
+                <span className="text-[#111827] text-[15px] font-medium underline decoration-gray-400 underline-offset-4 group-hover:text-[#374151] group-hover:decoration-[#374151] transition-colors">
                   View our classes
                 </span>
                 <ChevronRight
                   strokeWidth={2.5}
-                  className="w-5 h-5 text-[#111827] group-hover:text-[#00cc70] group-hover:translate-x-1 transition-all"
+                  className="w-5 h-5 text-[#111827] group-hover:text-[#374151] group-hover:translate-x-1 transition-all"
                 />
               </Link>
             </div>

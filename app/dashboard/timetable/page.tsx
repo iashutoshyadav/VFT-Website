@@ -82,8 +82,8 @@ function BookingModal({
   if (confirmed) {
     return (
       <div className="text-center py-6">
-        <div className="w-14 h-14 rounded-full bg-[#f0fdf8] border border-[rgba(0,168,93,0.2)] flex items-center justify-center mx-auto mb-4">
-          <CheckCircle className="w-7 h-7 text-[#00a85d]" />
+        <div className="w-14 h-14 rounded-full bg-[#f5f6f8] border border-[#e5e7eb] flex items-center justify-center mx-auto mb-4">
+          <CheckCircle className="w-7 h-7 text-[#374151]" />
         </div>
         <h3 className="font-[Outfit,sans-serif] font-black text-[1.25rem] text-[#0f172a] mb-[0.35rem]">
           {isFull ? "Added to Waitlist!" : "Booked!"}
@@ -91,7 +91,7 @@ function BookingModal({
         <p className="text-[#64748b] text-[0.88rem] mb-5">
           {cls.name} at {fmtTime(cls.start_time)} — you&apos;re all set.
         </p>
-        <button onClick={onClose} className="bg-[#00cc70] text-white border-0 rounded-lg px-6 py-[0.65rem] font-[Outfit,sans-serif] font-bold cursor-pointer">Done</button>
+        <button onClick={onClose} className="bg-[#1f2937] text-white border-0 rounded-lg px-6 py-[0.65rem] font-[Outfit,sans-serif] font-bold cursor-pointer">Done</button>
       </div>
     );
   }
@@ -120,7 +120,7 @@ function BookingModal({
           </span>
         </div>
         <div className="h-1.5 bg-[#e5e7eb] rounded-full">
-          <div className="h-full rounded-full bg-[#00cc70]"
+          <div className="h-full rounded-full bg-[#374151]"
             style={{ width: `${Math.min((cls.booked_count / cls.capacity) * 100, 100)}%` }} />
         </div>
       </div>
@@ -134,7 +134,7 @@ function BookingModal({
           {[{ label: "SMS", val: sms, set: setSms }, { label: "Email", val: email, set: setEmail }].map(({ label, val, set }) => (
             <label key={label} className="flex items-center gap-[0.4rem] cursor-pointer">
               <input type="checkbox" checked={val} onChange={(e) => set(e.target.checked)}
-                className="w-3.75 h-3.75" style={{ accentColor: "#00cc70" }} />
+                className="w-3.75 h-3.75" style={{ accentColor: "#374151" }} />
               <span className="text-[#475569] text-[0.85rem]">{label}</span>
             </label>
           ))}
@@ -144,7 +144,7 @@ function BookingModal({
       {error && <p className="text-[#ef4444] text-[0.82rem] mb-3">{error}</p>}
 
       <button onClick={handleBook} disabled={loading}
-        className="w-full bg-[#00cc70] text-white border-0 rounded-[10px] py-[0.85rem] font-[Outfit,sans-serif] font-extrabold text-[0.95rem] cursor-pointer flex items-center justify-center gap-2 disabled:opacity-60">
+        className="w-full bg-[#1f2937] text-white border-0 rounded-[10px] py-[0.85rem] font-[Outfit,sans-serif] font-extrabold text-[0.95rem] cursor-pointer flex items-center justify-center gap-2 disabled:opacity-60">
         {loading && <Loader2 className="w-4 h-4 animate-spin" />}
         {isFull ? "Join Waitlist →" : "Confirm Booking →"}
       </button>
@@ -260,7 +260,7 @@ export default function TimetablePage() {
             )}>
             {d}
             {ARRAY_TO_DOW[i] === todayDOW && (
-              <span className="block w-1 h-1 rounded-full bg-[#00cc70] mx-auto mt-0.75" />
+              <span className="block w-1 h-1 rounded-full bg-white mx-auto mt-0.75" />
             )}
           </button>
         ))}
@@ -322,7 +322,7 @@ export default function TimetablePage() {
                   <div className="flex items-center gap-2">
                     <div className="w-20 h-1.25 bg-[#e5e7eb] rounded-full">
                       <div className="h-full rounded-full"
-                        style={{ width: `${pct}%`, background: pct >= 90 ? "#ef4444" : pct >= 70 ? "#f59e0b" : "#00cc70" }} />
+                        style={{ width: `${pct}%`, background: pct >= 90 ? "#ef4444" : pct >= 70 ? "#f59e0b" : "#374151" }} />
                     </div>
                     <span className="text-[#94a3b8] text-[0.7rem]">{cls.booked_count}/{cls.capacity}</span>
                   </div>
@@ -330,7 +330,7 @@ export default function TimetablePage() {
                 <div className="shrink-0">
                   {cls.userStatus === "book" && (
                     <button onClick={() => setBookingCls(cls)}
-                      className="bg-[#00cc70] text-white border-0 rounded-[10px] px-[1.1rem] py-[0.6rem] font-[Outfit,sans-serif] font-extrabold text-[0.85rem] cursor-pointer whitespace-nowrap">
+                      className="bg-[#1f2937] text-white border-0 rounded-[10px] px-[1.1rem] py-[0.6rem] font-[Outfit,sans-serif] font-extrabold text-[0.85rem] cursor-pointer whitespace-nowrap">
                       Book →
                     </button>
                   )}

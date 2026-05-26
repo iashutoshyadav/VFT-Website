@@ -71,7 +71,7 @@ const upcomingEvents = [
     spots: 50,
     spotsLeft: 22,
     tag: "Free Entry",
-    tagColor: "#00a85d",
+    tagColor: "#374151",
   },
   {
     emoji: "🍎",
@@ -125,7 +125,7 @@ export default function EventsPage() {
               { val: "🏆", label: "Prizes & badges" },
             ].map((s) => (
               <div key={s.label}>
-                <p className="font-[Outfit,sans-serif] font-black text-[1.8rem] text-[#00cc70] leading-none mb-1">{s.val}</p>
+                <p className="font-[Outfit,sans-serif] font-black text-[1.8rem] text-white leading-none mb-1">{s.val}</p>
                 <p className="text-white/45 text-[0.8rem]">{s.label}</p>
               </div>
             ))}
@@ -164,7 +164,7 @@ export default function EventsPage() {
                     </div>
                     {ev.tag && (
                       <span className="text-white text-[0.62rem] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wide shrink-0"
-                        style={{ background: ev.tagColor ?? "#00a85d" }}>
+                        style={{ background: ev.tagColor ?? "#374151" }}>
                         {ev.tag}
                       </span>
                     )}
@@ -173,15 +173,15 @@ export default function EventsPage() {
                   {/* Meta */}
                   <div className="space-y-1.5 mb-4">
                     <div className="flex items-center gap-2 text-[#64748b] text-[0.8rem]">
-                      <Calendar className="w-3.5 h-3.5 text-[#00a85d] shrink-0" />
+                      <Calendar className="w-3.5 h-3.5 text-[#374151] shrink-0" />
                       {ev.date}
                     </div>
                     <div className="flex items-center gap-2 text-[#64748b] text-[0.8rem]">
-                      <Clock className="w-3.5 h-3.5 text-[#00a85d] shrink-0" />
+                      <Clock className="w-3.5 h-3.5 text-[#374151] shrink-0" />
                       {ev.time}
                     </div>
                     <div className="flex items-center gap-2 text-[#64748b] text-[0.8rem]">
-                      <MapPin className="w-3.5 h-3.5 text-[#00a85d] shrink-0" />
+                      <MapPin className="w-3.5 h-3.5 text-[#374151] shrink-0" />
                       {ev.location}
                     </div>
                   </div>
@@ -194,18 +194,18 @@ export default function EventsPage() {
                       <span className="text-[#94a3b8] text-[0.72rem] flex items-center gap-1">
                         <Users className="w-3 h-3" /> {ev.spots - ev.spotsLeft}/{ev.spots} joined
                       </span>
-                      <span className={`text-[0.72rem] font-bold ${ev.spotsLeft <= 5 ? "text-[#ef4444]" : "text-[#00a85d]"}`}>
+                      <span className={`text-[0.72rem] font-bold ${ev.spotsLeft <= 5 ? "text-[#ef4444]" : "text-[#374151]"}`}>
                         {ev.spotsLeft} spots left
                       </span>
                     </div>
                     <div className="h-1.5 bg-[#f1f5f9] rounded-full overflow-hidden">
-                      <div className={`h-full rounded-full transition-all ${ev.spotsLeft <= 5 ? "bg-[#ef4444]" : "bg-[#00cc70]"}`}
+                      <div className={`h-full rounded-full transition-all ${ev.spotsLeft <= 5 ? "bg-[#ef4444]" : "bg-[#374151]"}`}
                         style={{ width: `${pct}%` }} />
                     </div>
                   </div>
 
                   <Link href="/member-login"
-                    className="flex items-center justify-center gap-1.5 w-full py-2.5 bg-[#f0fdf8] border border-[#00cc70]/25 rounded-lg text-[#00a85d] text-[0.85rem] font-bold no-underline hover:bg-[#00cc70] hover:text-white transition-all">
+                    className="flex items-center justify-center gap-1.5 w-full py-2.5 bg-[#f5f6f8] border border-[#e5e7eb] rounded-lg text-[#374151] text-[0.85rem] font-bold no-underline hover:bg-[#1f2937] hover:text-white transition-all">
                     Register Interest <ChevronRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -230,7 +230,7 @@ export default function EventsPage() {
                 <p className="text-[3rem] mb-3">{h.emoji}</p>
                 <h3 className="font-black text-[#0f172a] text-[0.9rem] mb-2">{h.title}</h3>
                 <div className="flex items-center justify-center gap-2 mb-1">
-                  <Users className="w-4 h-4 text-[#00a85d]" />
+                  <Users className="w-4 h-4 text-[#374151]" />
                   <span className="text-[#64748b] text-[0.8rem]">{h.participants} participants</span>
                 </div>
                 <div className="flex items-center justify-center gap-1.5">
@@ -257,7 +257,7 @@ export default function EventsPage() {
               { step: "3", icon: "🏆", title: "Participate & earn rewards", desc: "Complete the challenge, earn loyalty points, and unlock exclusive member badges." },
             ].map((s) => (
               <div key={s.step} className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-[#0f172a] text-[#00cc70] font-[Outfit,sans-serif] font-black text-xl flex items-center justify-center mb-3">{s.step}</div>
+                <div className="w-12 h-12 rounded-full bg-[#0f172a] text-white font-[Outfit,sans-serif] font-black text-xl flex items-center justify-center mb-3">{s.step}</div>
                 <p className="text-2xl mb-2">{s.icon}</p>
                 <h3 className="font-black text-[#0f172a] text-[0.9rem] mb-1">{s.title}</h3>
                 <p className="text-[#64748b] text-[0.82rem] leading-relaxed">{s.desc}</p>
@@ -273,7 +273,7 @@ export default function EventsPage() {
       {/* ── Newsletter CTA ── */}
       <section className="section-padding bg-[#0f172a]">
         <div className="container-max px-4 text-center">
-          <Zap className="w-10 h-10 text-[#00cc70] mx-auto mb-4" />
+          <Zap className="w-10 h-10 text-white/70 mx-auto mb-4" />
           <h2 className="text-2xl sm:text-3xl font-black text-white mb-3">
             Never Miss an Event
           </h2>

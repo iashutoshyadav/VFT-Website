@@ -4,17 +4,26 @@
    TOKENS
 ══════════════════════════════════════════════ */
 :root {
-  --green: #00cc70;
-  --green-dark: #00a85d;
-  --green-bg: #f0fdf8;
-  --dark: #111827;
-  --dark-2: #1f2937;
-  --grey: #f7f8fa;
+  --accent: #1f2937;
+  --accent-dark: #111827;
+  --accent-hover: #374151;
+  --accent-bg: #f5f6f8;
+  --dark: #1f2937;
+  --dark-2: #374151;
+  --grey: #f5f6f8;
+  --grey-2: #eef0f3;
   --border: #e5e7eb;
+  --border-2: #d1d5db;
   --text: #111827;
   --muted: #6b7280;
   --subtle: #9ca3af;
   --white: #ffffff;
+  --footer-bg: #1f2937;
+
+  /* legacy aliases kept for backward compat */
+  --green: #1f2937;
+  --green-dark: #374151;
+  --green-bg: #f5f6f8;
 }
 
 /* ══════════════════════════════════════════════
@@ -71,11 +80,11 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--green);
+  background: var(--border-2);
 }
 
 ::selection {
-  background: var(--green);
+  background: #374151;
   color: #fff;
 }
 
@@ -95,7 +104,7 @@
    TYPOGRAPHY
 ══════════════════════════════════════════════ */
 .gradient-text {
-  background: linear-gradient(135deg, #00cc70 0%, #00a85d 100%);
+  background: linear-gradient(135deg, #374151 0%, #111827 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -104,7 +113,7 @@
 /* Section eyebrow label */
 .eyebrow {
   display: inline-block;
-  color: var(--green-dark);
+  color: var(--dark-2);
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -114,7 +123,7 @@
 
 .eyebrow-dark {
   display: inline-block;
-  color: var(--green);
+  color: var(--muted);
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -125,7 +134,7 @@
 /* legacy aliases */
 .section-tag {
   display: inline-block;
-  color: var(--green-dark);
+  color: var(--dark-2);
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -135,7 +144,7 @@
 
 .section-label {
   display: inline-block;
-  color: var(--green-dark);
+  color: var(--dark-2);
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -145,7 +154,7 @@
 
 .section-label-dark {
   display: inline-block;
-  color: var(--green);
+  color: var(--muted);
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -154,20 +163,20 @@
 }
 
 /* ══════════════════════════════════════════════
-   BUTTONS — PureGym style
+   BUTTONS
 ══════════════════════════════════════════════ */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: var(--green);
+  background: var(--accent);
   color: #fff;
   font-family: 'Outfit', sans-serif;
   font-weight: 700;
   font-size: 0.9rem;
   padding: 0.875rem 1.75rem;
   border-radius: 6px;
-  border: 2px solid var(--green);
+  border: 2px solid var(--accent);
   cursor: pointer;
   transition: background 0.18s, border-color 0.18s, transform 0.15s, box-shadow 0.18s;
   text-decoration: none;
@@ -176,10 +185,10 @@
 }
 
 .btn-primary:hover {
-  background: var(--green-dark);
-  border-color: var(--green-dark);
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(0, 204, 112, .25);
+  box-shadow: 0 6px 20px rgba(31, 41, 55, .25);
 }
 
 .btn-secondary {
@@ -226,7 +235,7 @@
 }
 
 .btn-white:hover {
-  background: #f0fdf8;
+  background: var(--grey);
   transform: translateY(-1px);
 }
 
@@ -255,7 +264,7 @@
 }
 
 /* ══════════════════════════════════════════════
-   CARD  — flat PureGym style
+   CARD  — flat style
 ══════════════════════════════════════════════ */
 .card {
   background: var(--white);
@@ -362,15 +371,15 @@
 
 @keyframes pulse-badge {
   0% {
-    box-shadow: 0 0 0 0 rgba(0, 204, 112, 0.45);
+    box-shadow: 0 0 0 0 rgba(55, 65, 81, 0.45);
     transform: scale(1);
   }
   70% {
-    box-shadow: 0 0 0 5px rgba(0, 204, 112, 0);
+    box-shadow: 0 0 0 5px rgba(55, 65, 81, 0);
     transform: scale(1.05);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(0, 204, 112, 0);
+    box-shadow: 0 0 0 0 rgba(55, 65, 81, 0);
     transform: scale(1);
   }
 }

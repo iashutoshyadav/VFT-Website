@@ -10,13 +10,13 @@ export default function NotFound() {
         {/* Big 404 */}
         <div className="relative mb-6">
           <p
-            className="font-[Outfit,sans-serif] text-[clamp(7rem,22vw,10rem)] font-black leading-none tracking-[-0.05em] select-none bg-gradient-to-br from-[#00cc70] to-[#00a85d] [background-clip:text] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]"
+            className="font-[Outfit,sans-serif] text-[clamp(7rem,22vw,10rem)] font-black leading-none tracking-[-0.05em] select-none bg-gradient-to-br from-[#1f2937] to-[#374151] [background-clip:text] [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]"
           >
             404
           </p>
           {/* Dumbbell icon floating in the 0 */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white border-2 border-[#e5e7eb] flex items-center justify-center shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
-            <Dumbbell className="w-[26px] h-[26px] text-[#00cc70]" />
+            <Dumbbell className="w-[26px] h-[26px] text-[#374151]" />
           </div>
         </div>
 
@@ -56,7 +56,7 @@ export default function NotFound() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[#475569] text-[0.9rem] font-semibold no-underline transition-colors duration-200 hover:text-[#00a85d]"
+                className="text-[#475569] text-[0.9rem] font-semibold no-underline transition-colors duration-200 hover:text-[#1f2937]"
               >
                 {link.label}
               </Link>

@@ -24,8 +24,8 @@ const TYPE_ICON: Record<NotifType, typeof Bell> = {
 };
 
 const TYPE_COLOR: Record<NotifType, string> = {
-  booking:  "#00cc70",
-  reminder: "#00cc70",
+  booking:  "#374151",
+  reminder: "#374151",
   offer:    "#6366f1",
   streak:   "#f59e0b",
   system:   "#3b82f6",
@@ -153,10 +153,10 @@ export default function NotificationsPage() {
                   "flex gap-4 px-[1.1rem] py-4 rounded-[14px] transition-all duration-150 relative",
                   n.read
                     ? "bg-white border border-[#e5e7eb] cursor-default"
-                    : "bg-[#f0fdf8] border border-[rgba(0,168,93,0.2)] cursor-pointer"
+                    : "bg-[#f5f6f8] border border-[#d1d5db] cursor-pointer"
                 )}>
                 {!n.read && (
-                  <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-[#00cc70]" />
+                  <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-[#374151]" />
                 )}
                 <div className="w-10.5 h-10.5 rounded-xl flex items-center justify-center shrink-0"
                   style={{ background: `${color}18` }}>

@@ -17,7 +17,7 @@ const JOIN_PLANS = [
     id: "premium",
     name: "Premium",
     price: "£44.99",
-    color: "#00cc70",
+    color: "#374151",
     popular: true,
     features: ["24/7 Gym Access", "Unlimited Classes", "Unlimited Sauna", "Members App", "1 Guest Pass/month"],
   },
@@ -64,8 +64,8 @@ function StartMembershipPanel({ onStarted }: { onStarted: (plan: string) => void
   if (done) {
     return (
       <div className="text-center py-10">
-        <div className="w-16 h-16 rounded-full bg-[#f0fdf8] border border-[rgba(0,168,93,0.2)] flex items-center justify-center mx-auto mb-4">
-          <CheckCircle className="w-8 h-8 text-[#00cc70]" />
+        <div className="w-16 h-16 rounded-full bg-[#f5f6f8] border border-[#e5e7eb] flex items-center justify-center mx-auto mb-4">
+          <CheckCircle className="w-8 h-8 text-[#374151]" />
         </div>
         <h3 className="font-[Outfit,sans-serif] font-black text-[1.3rem] text-[#0f172a] mb-1">Membership Started!</h3>
         <p className="text-[#64748b] text-[0.9rem]">Welcome to VFT — loading your plan…</p>
@@ -87,26 +87,26 @@ function StartMembershipPanel({ onStarted }: { onStarted: (plan: string) => void
             className={clsx(
               "text-left border-[1.5px] rounded-2xl p-5 transition-all cursor-pointer relative",
               selected === plan.id
-                ? "border-[#00cc70] bg-[#f0fdf8] shadow-[0_0_0_3px_rgba(0,204,112,0.12)]"
+                ? "border-[#374151] bg-[#f5f6f8] shadow-[0_0_0_3px_rgba(55,65,81,0.12)]"
                 : "border-[#e2e8f0] bg-white hover:border-[#cbd5e1]"
             )}>
             {plan.popular && (
-              <span className="absolute top-3 right-3 bg-[#00cc70] text-white text-[0.62rem] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wide">
+              <span className="absolute top-3 right-3 bg-[#1f2937] text-white text-[0.62rem] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wide">
                 Popular
               </span>
             )}
             {/* Radio */}
-            <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center mb-3 ${selected === plan.id ? "border-[#00cc70]" : "border-[#cbd5e1]"}`}>
-              {selected === plan.id && <div className="w-2 h-2 rounded-full bg-[#00cc70]" />}
+            <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center mb-3 ${selected === plan.id ? "border-[#374151]" : "border-[#cbd5e1]"}`}>
+              {selected === plan.id && <div className="w-2 h-2 rounded-full bg-[#374151]" />}
             </div>
             <p className="font-[Outfit,sans-serif] font-black text-[1.1rem] text-[#0f172a] mb-0.5">{plan.name}</p>
-            <p className="font-[Outfit,sans-serif] font-black text-[1.4rem] text-[#00cc70] mb-3">
+            <p className="font-[Outfit,sans-serif] font-black text-[1.4rem] text-[#1f2937] mb-3">
               {plan.price}<span className="text-[#94a3b8] font-medium text-[0.75rem]">/mo</span>
             </p>
             <div className="space-y-1.5">
               {plan.features.map((f) => (
                 <div key={f} className="flex items-center gap-2">
-                  <CheckCircle className="w-3.5 h-3.5 text-[#00a85d] shrink-0" />
+                  <CheckCircle className="w-3.5 h-3.5 text-[#374151] shrink-0" />
                   <span className="text-[#475569] text-[0.78rem]">{f}</span>
                 </div>
               ))}
@@ -119,7 +119,7 @@ function StartMembershipPanel({ onStarted }: { onStarted: (plan: string) => void
       <button
         onClick={handleStart}
         disabled={loading}
-        className="w-full bg-linear-to-br from-[#00cc70] to-[#00a85d] text-white border-0 rounded-[12px] py-[1rem] font-[Outfit,sans-serif] font-extrabold text-[1rem] cursor-pointer transition-all hover:-translate-y-px hover:shadow-[0_8px_24px_rgba(0,204,112,0.35)] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+        className="w-full bg-[#1f2937] text-white border-0 rounded-[12px] py-[1rem] font-[Outfit,sans-serif] font-extrabold text-[1rem] cursor-pointer transition-all hover:bg-[#374151] hover:-translate-y-px hover:shadow-[0_8px_24px_rgba(31,41,55,0.35)] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
       >
         {loading ? (
           <>
@@ -365,19 +365,19 @@ export default function MembershipPage() {
 
       {/* Current plan */}
       <div className="bg-linear-to-br from-[#111827] to-[#1f2937] rounded-[20px] p-7 mb-5 relative overflow-hidden">
-        <div className="absolute -top-[30px] -right-[30px] w-[200px] h-[200px] rounded-full bg-[radial-gradient(circle,rgba(0,204,112,0.12)_0%,transparent_70%)]" />
+        <div className="absolute -top-[30px] -right-[30px] w-[200px] h-[200px] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.05)_0%,transparent_70%)]" />
         <div className="flex flex-wrap gap-6 justify-between items-start">
           <div>
             <p className="text-white/50 text-[0.7rem] font-bold uppercase tracking-widest mb-[0.35rem]">Current Plan</p>
             <h2 className="font-[Outfit,sans-serif] font-black text-[2rem] text-white tracking-[-0.03em] mb-1">{planName}</h2>
             <div className="flex items-baseline gap-[0.3rem] mb-[0.6rem]">
-              <span className="font-[Outfit,sans-serif] font-black text-[1.6rem] text-[#00cc70]">
+              <span className="font-[Outfit,sans-serif] font-black text-[1.6rem] text-white">
                 {membership ? `£${Number(membership.price).toFixed(2)}` : PLAN_PRICE[plan]}
               </span>
               <span className="text-white/40 text-[0.85rem]">/month</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-[7px] h-[7px] rounded-full bg-[#00cc70] shadow-[0_0_6px_rgba(0,204,112,0.6)]" />
+              <div className="w-[7px] h-[7px] rounded-full bg-white/80 shadow-[0_0_6px_rgba(255,255,255,0.4)]" />
               <span className="text-white/55 text-[0.82rem]">
                 Active{renewsStr ? ` · Next bill: ${renewsStr}` : ""}
               </span>
@@ -386,7 +386,7 @@ export default function MembershipPage() {
           <div className="grid gap-[0.4rem]">
             {features.map((f) => (
               <div key={f} className="flex items-center gap-2">
-                <CheckCircle className="w-3.5 h-3.5 text-[#00cc70] shrink-0" />
+                <CheckCircle className="w-3.5 h-3.5 text-white/70 shrink-0" />
                 <span className="text-white/70 text-[0.82rem]">{f}</span>
               </div>
             ))}
@@ -436,8 +436,8 @@ export default function MembershipPage() {
       )}
 
       {/* Billing info notice */}
-      <div className="bg-[#f0fdf8] border border-[rgba(0,168,93,0.2)] rounded-[20px] p-5 mb-5">
-        <p className="text-[#065f46] text-[0.88rem] font-semibold">
+      <div className="bg-[#f5f6f8] border border-[#e5e7eb] rounded-[20px] p-5 mb-5">
+        <p className="text-[#374151] text-[0.88rem] font-semibold">
           💡 Full payment history will appear here once your first billing cycle is processed by the VFT team.
         </p>
       </div>

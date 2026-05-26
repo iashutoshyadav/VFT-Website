@@ -13,29 +13,40 @@ const contactInfo = [
 
 function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState({
     name: "", email: "", phone: "", interest: "membership", message: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+    setError(null);
     try {
-      await fetch("/api/contact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-    } catch (err) {
-      console.error(err);
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setError(data.error ?? "Something went wrong. Please try again.");
+        return;
+      }
+      setSubmitted(true);
+    } catch {
+      setError("Could not send message. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
     }
-    setSubmitted(true);
   };
 
   if (submitted) {
     return (
       <div className="flex flex-col items-center justify-center py-16 text-center">
-        <div className="w-16 h-16 rounded-full bg-[#f0fdf8] border border-[#00cc70]/30 flex items-center justify-center mb-4">
-          <CheckCircle className="w-8 h-8 text-[#00a85d]" />
+        <div className="w-16 h-16 rounded-full bg-[#f5f6f8] border border-[#d1d5db] flex items-center justify-center mb-4">
+          <CheckCircle className="w-8 h-8 text-[#374151]" />
         </div>
         <h3 className="text-[#0f172a] text-2xl font-black mb-2">Message Sent!</h3>
         <p className="text-[#64748b]">We&apos;ll be in touch within 2 hours. Check your inbox.</p>
@@ -43,7 +54,7 @@ function ContactForm() {
     );
   }
 
-  const inputClass = "w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-xl px-4 py-3 text-[#0f172a] text-sm outline-none focus:border-[#00cc70] focus:bg-white placeholder:text-[#94a3b8] transition-all";
+  const inputClass = "w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-xl px-4 py-3 text-[#0f172a] text-sm outline-none focus:border-[#374151] focus:bg-white placeholder:text-[#94a3b8] transition-all";
   const labelClass = "block text-[#475569] text-xs font-semibold uppercase tracking-wider mb-2";
 
   return (
@@ -77,8 +88,17 @@ function ContactForm() {
         <label className={labelClass}>Message</label>
         <textarea rows={4} value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} placeholder="Tell us how we can help..." className={`${inputClass} resize-none`} />
       </div>
-      <button type="submit" className="btn-primary w-full justify-center text-[15px] py-3.5">
-        Send Message <Send className="w-4 h-4" />
+      {error && (
+        <p className="text-[#ef4444] text-sm bg-[#fef2f2] border border-[#fecaca] rounded-lg px-4 py-3">
+          {error}
+        </p>
+      )}
+      <button
+        type="submit"
+        disabled={loading}
+        className="btn-primary w-full justify-center text-[15px] py-3.5 disabled:opacity-60 disabled:cursor-not-allowed"
+      >
+        {loading ? "Sending…" : <><Send className="w-4 h-4" /> Send Message</>}
       </button>
     </form>
   );
@@ -115,8 +135,8 @@ export default function ContactPage() {
                   const Icon = item.icon;
                   return (
                     <div key={item.label} className="card flex items-center gap-4 p-4">
-                      <div className="w-10 h-10 rounded-xl bg-[#f0fdf8] border border-[#00cc70]/20 flex items-center justify-center shrink-0">
-                        <Icon className="w-5 h-5 text-[#00a85d]" />
+                      <div className="w-10 h-10 rounded-xl bg-[#f5f6f8] border border-[#e5e7eb] flex items-center justify-center shrink-0">
+                        <Icon className="w-5 h-5 text-[#374151]" />
                       </div>
                       <div>
                         <div className="text-[#94a3b8] text-xs uppercase tracking-wider mb-0.5">{item.label}</div>
@@ -125,7 +145,7 @@ export default function ContactPage() {
                             href={item.href}
                             target={item.href.startsWith("http") ? "_blank" : undefined}
                             rel="noopener noreferrer"
-                            className="text-[#0f172a] text-sm font-medium hover:text-[#00a85d] transition-colors"
+                            className="text-[#0f172a] text-sm font-medium hover:text-[#374151] transition-colors"
                           >
                             {item.value}
                           </a>
@@ -141,6 +161,7 @@ export default function ContactPage() {
               {/* Map embed */}
               <div className="rounded-2xl overflow-hidden border border-[#e2e8f0] h-52">
                 <iframe
+                  title="VFT Location Map"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10316.123!2d-4.1430!3d50.5503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486cc3d2e3c9f4a5%3A0x4e4a2cdf6b4a5b3e!2sTavistock%2C%20Devon!5e0!3m2!1sen!2suk!4v1234567890"
                   width="100%"
                   height="100%"

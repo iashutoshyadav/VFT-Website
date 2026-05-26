@@ -36,15 +36,15 @@ export default function CookieConsent() {
         animating ? "translate-y-0" : "translate-y-full"
       )}
     >
-      <div className="bg-[#111827] border-t border-white/[0.06] py-4 px-6">
+      <div className="bg-[#1f2937] border-t border-white/10 py-4 px-6">
         <div className="max-w-[1240px] mx-auto flex items-center gap-4 flex-wrap">
 
           {/* Icon + brand */}
           <div className="flex items-center gap-[0.6rem] shrink-0">
-            <div className="w-8 h-8 rounded-lg bg-[linear-gradient(135deg,#00cc70,#00a85d)] flex items-center justify-center shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-white/15 border border-white/20 flex items-center justify-center shrink-0">
               <Cookie className="w-4 h-4 text-white" />
             </div>
-            <span className="text-white [font-family:'Outfit',sans-serif] font-extrabold text-[0.85rem] tracking-[-0.01em]">
+            <span className="text-white font-['Outfit',sans-serif] font-extrabold text-[0.85rem] tracking-[-0.01em]">
               VFT
             </span>
           </div>
@@ -52,7 +52,7 @@ export default function CookieConsent() {
           {/* Text */}
           <p className="text-white/70 text-[0.85rem] leading-[1.6] flex-[1_1_280px] m-0">
             We use cookies to improve your experience and analyse site usage.{" "}
-            <Link href="/privacy#cookies" className="text-[#00cc70] underline">
+            <Link href="/privacy#cookies" className="text-white underline hover:text-slate-300">
               Learn more
             </Link>
           </p>
@@ -61,13 +61,13 @@ export default function CookieConsent() {
           <div className="flex gap-2 items-center shrink-0">
             <button
               onClick={() => dismiss("accepted")}
-              className="bg-[#00cc70] hover:bg-[#00a85d] text-white border-none rounded-[6px] py-2 px-[1.1rem] [font-family:'Outfit',sans-serif] font-bold text-[0.82rem] cursor-pointer transition-[background] duration-200 whitespace-nowrap"
+              className="bg-white hover:bg-[#f5f6f8] text-[#1f2937] border-none rounded-[6px] py-2 px-[1.1rem] font-['Outfit',sans-serif] font-bold text-[0.82rem] cursor-pointer transition-[background] duration-200 whitespace-nowrap"
             >
               Accept All
             </button>
             <button
               onClick={() => dismiss("declined")}
-              className="bg-transparent text-white/70 hover:text-white border border-white/20 hover:border-white/50 rounded-[6px] py-2 px-4 [font-family:'Outfit',sans-serif] font-bold text-[0.82rem] cursor-pointer transition-all duration-200 whitespace-nowrap"
+              className="bg-transparent text-white/70 hover:text-white border border-white/20 hover:border-white/50 rounded-[6px] py-2 px-4 font-['Outfit',sans-serif] font-bold text-[0.82rem] cursor-pointer transition-all duration-200 whitespace-nowrap"
             >
               Manage
             </button>

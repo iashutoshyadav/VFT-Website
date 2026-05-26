@@ -11,7 +11,7 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="section-padding bg-[#f7f8fa]">
+    <section className="section-padding bg-[#f5f6f8]">
       <div className="container-max px-6">
 
         {/* Header */}
@@ -20,7 +20,6 @@ export default function TestimonialsSection() {
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-[#111827] mb-4">
             Don&apos;t just take our word for it
           </h2>
-          {/* Rating badge — like PureGym */}
           <div className="inline-flex items-center gap-3 bg-white border border-[#e5e7eb] rounded-xl px-5 py-3 shadow-sm mt-2">
             <div className="flex gap-0.5">
               {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />)}
@@ -36,7 +35,7 @@ export default function TestimonialsSection() {
             <div
               key={t.name}
               className={`bg-white rounded-2xl p-6 transition-all duration-200 hover:-translate-y-0.5 ${i === 1
-                ? "border-2 border-[#00cc70] shadow-[0_4px_20px_rgba(0,204,112,0.10)]"
+                ? "border-2 border-[#374151] shadow-[0_4px_20px_rgba(31,41,55,0.10)]"
                 : "border border-[#e5e7eb] hover:border-[#d1d5db] hover:shadow-[0_4px_20px_rgba(17,24,39,0.07)]"
                 }`}
             >
@@ -49,7 +48,7 @@ export default function TestimonialsSection() {
                 &ldquo;{t.text}&rdquo;
               </p>
               <div className="flex items-center gap-3 pt-4 border-t border-[#f3f4f6]">
-                <div className="w-9 h-9 rounded-full bg-[#f0fdf8] border border-[#00cc70]/20 flex items-center justify-center text-[11px] font-black text-[#00a85d] shrink-0">
+                <div className="w-9 h-9 rounded-full bg-[#f5f6f8] border border-[#d1d5db] flex items-center justify-center text-[11px] font-black text-[#374151] shrink-0">
                   {t.initials}
                 </div>
                 <div>

@@ -57,10 +57,10 @@ export default function MemberLoginPage() {
           />
           {/* Deep bottom-up gradient so text pops */}
           <div className="absolute inset-0 bg-linear-to-t from-black via-black/70 to-black/20" />
-          {/* Green diagonal wash top-left */}
-          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(0,168,93,0.22)_0%,transparent_50%)]" />
-          {/* Subtle green glow at bottom */}
-          <div className="absolute bottom-0 left-0 right-0 h-[55%] bg-linear-to-t from-[rgba(0,204,112,0.07)] to-transparent pointer-events-none" />
+          {/* Subtle dark wash top-left */}
+          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(31,41,55,0.22)_0%,transparent_50%)]" />
+          {/* Subtle dark glow at bottom */}
+          <div className="absolute bottom-0 left-0 right-0 h-[55%] bg-linear-to-t from-[rgba(31,41,55,0.07)] to-transparent pointer-events-none" />
 
           {/* Top bar */}
           <div className="relative z-10 flex items-center px-8 py-6">
@@ -74,9 +74,9 @@ export default function MemberLoginPage() {
           <div className="relative z-10 px-10 pb-10">
 
             {/* Member Portal badge */}
-            <div className="inline-flex items-center gap-[0.45rem] bg-[rgba(0,204,112,0.14)] border border-[rgba(0,204,112,0.28)] rounded-[20px] px-[0.9rem] py-[0.32rem] mb-5">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#00cc70] shadow-[0_0_8px_rgba(0,204,112,0.9)]" />
-              <span className="text-[#00cc70] text-[0.7rem] font-extrabold tracking-[0.12em] uppercase">
+            <div className="inline-flex items-center gap-[0.45rem] bg-white/10 border border-white/20 rounded-[20px] px-[0.9rem] py-[0.32rem] mb-5">
+              <div className="w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.9)]" />
+              <span className="text-white text-[0.7rem] font-extrabold tracking-[0.12em] uppercase">
                 Member Portal
               </span>
             </div>
@@ -84,7 +84,7 @@ export default function MemberLoginPage() {
             {/* Headline */}
             <h1 className="font-[Outfit,sans-serif] text-[clamp(2rem,3.2vw,3rem)] font-black text-white leading-[1.1] mb-4 tracking-[-0.03em]">
               Train smarter.<br />
-              <span className="text-[#00cc70]">Access your account.</span>
+              <span className="text-white/80">Access your account.</span>
             </h1>
 
             {/* Description */}
@@ -177,7 +177,7 @@ export default function MemberLoginPage() {
                     required
                     autoComplete="email"
                     placeholder="you@example.com"
-                    className="w-full bg-[#f8fafc] border-[1.5px] border-[#e2e8f0] rounded-[10px] py-[0.8rem] pr-4 pl-11 text-[0.9rem] text-[#0f172a] outline-none transition-[border-color,background] duration-200 box-border focus:border-[#00cc70] focus:bg-white placeholder:text-[#94a3b8]"
+                    className="w-full bg-[#f8fafc] border-[1.5px] border-[#e2e8f0] rounded-[10px] py-[0.8rem] pr-4 pl-11 text-[0.9rem] text-[#0f172a] outline-none transition-[border-color,background] duration-200 box-border focus:border-[#374151] focus:bg-white placeholder:text-[#94a3b8]"
                   />
                 </div>
               </div>
@@ -190,7 +190,7 @@ export default function MemberLoginPage() {
                   </label>
                   <Link
                     href="/forgot-password"
-                    className="text-[#00a85d] text-[0.78rem] font-semibold no-underline hover:text-[#00cc70]"
+                    className="text-[#374151] text-[0.78rem] font-semibold no-underline hover:text-[#1f2937]"
                   >
                     Forgot password?
                   </Link>
@@ -204,7 +204,7 @@ export default function MemberLoginPage() {
                     required
                     autoComplete="current-password"
                     placeholder="••••••••"
-                    className="w-full bg-[#f8fafc] border-[1.5px] border-[#e2e8f0] rounded-[10px] py-[0.8rem] pr-[2.85rem] pl-11 text-[0.9rem] text-[#0f172a] outline-none transition-[border-color,background] duration-200 box-border focus:border-[#00cc70] focus:bg-white placeholder:text-[#94a3b8]"
+                    className="w-full bg-[#f8fafc] border-[1.5px] border-[#e2e8f0] rounded-[10px] py-[0.8rem] pr-[2.85rem] pl-11 text-[0.9rem] text-[#0f172a] outline-none transition-[border-color,background] duration-200 box-border focus:border-[#374151] focus:bg-white placeholder:text-[#94a3b8]"
                   />
                   <button
                     type="button"
@@ -223,7 +223,7 @@ export default function MemberLoginPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-linear-to-br from-[#00cc70] to-[#00a85d] text-white border-0 rounded-[10px] py-[0.95rem] font-[Outfit,sans-serif] font-extrabold text-[0.95rem] transition-[opacity,transform,box-shadow] duration-200 tracking-[-0.01em] mt-[0.15rem] flex items-center justify-center gap-2 hover:-translate-y-px hover:shadow-[0_8px_24px_rgba(0,204,112,0.35)] disabled:cursor-not-allowed disabled:opacity-85 cursor-pointer"
+                className="w-full bg-[#1f2937] text-white border-0 rounded-[10px] py-[0.95rem] font-[Outfit,sans-serif] font-extrabold text-[0.95rem] transition-[opacity,transform,box-shadow] duration-200 tracking-[-0.01em] mt-[0.15rem] flex items-center justify-center gap-2 hover:bg-[#374151] hover:-translate-y-px hover:shadow-[0_8px_24px_rgba(31,41,55,0.35)] disabled:cursor-not-allowed disabled:opacity-85 cursor-pointer"
               >
                 {loading ? (
                   <>

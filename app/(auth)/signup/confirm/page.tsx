@@ -20,8 +20,8 @@ function ConfirmContent() {
       {/* Card */}
       <div className="w-full max-w-[440px] bg-white rounded-2xl border border-[#e5e7eb] shadow-[0_4px_24px_rgba(0,0,0,0.06)] overflow-hidden">
 
-        {/* Green header strip */}
-        <div className="bg-[#00cc70] px-6 py-8 text-center relative overflow-hidden">
+        {/* Header strip */}
+        <div className="bg-[#1f2937] px-6 py-8 text-center relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-white/10 -translate-y-1/3 translate-x-1/3" />
           <div className="absolute bottom-0 left-0 w-24 h-24 rounded-full bg-white/8 translate-y-1/2 -translate-x-1/3" />
           <div className="relative z-10">
@@ -51,8 +51,8 @@ function ConfirmContent() {
               "You'll go straight to your member portal 🎉",
             ].map((step, i) => (
               <div key={i} className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-[#f0fdf8] border border-[rgba(0,168,93,0.2)] flex items-center justify-center shrink-0 mt-0.5">
-                  <span className="text-[#00a85d] text-[0.7rem] font-extrabold">{i + 1}</span>
+                <div className="w-6 h-6 rounded-full bg-[#f5f6f8] border border-[#e5e7eb] flex items-center justify-center shrink-0 mt-0.5">
+                  <span className="text-[#374151] text-[0.7rem] font-extrabold">{i + 1}</span>
                 </div>
                 <p className="text-[#475569] text-[0.85rem] leading-snug">{step}</p>
               </div>
@@ -67,7 +67,7 @@ function ConfirmContent() {
             <div className="grid grid-cols-2 gap-2">
               {["📅 Book classes", "🏆 Achievements", "💳 Manage plan", "🔔 Notifications", "👤 My profile", "📖 My bookings"].map((item) => (
                 <div key={item} className="flex items-center gap-1.5">
-                  <CheckCircle className="w-3.5 h-3.5 text-[#00a85d] shrink-0" />
+                  <CheckCircle className="w-3.5 h-3.5 text-[#374151] shrink-0" />
                   <span className="text-[#374151] text-[0.78rem] font-semibold">{item}</span>
                 </div>
               ))}
@@ -76,7 +76,7 @@ function ConfirmContent() {
 
           <p className="text-[#94a3b8] text-[0.78rem] text-center mb-5">
             Didn&apos;t receive it? Check your spam folder, or{" "}
-            <Link href="/signup" className="text-[#00a85d] font-semibold no-underline">try again</Link>.
+            <Link href="/signup" className="text-[#374151] font-semibold no-underline">try again</Link>.
           </p>
 
           <Link href="/member-login"
@@ -88,7 +88,7 @@ function ConfirmContent() {
 
       <p className="text-[#94a3b8] text-[0.75rem] mt-6">
         Need help?{" "}
-        <a href="mailto:hello@vitalityfitnesstavistock.com" className="text-[#00a85d] no-underline">
+        <a href="mailto:hello@vitalityfitnesstavistock.com" className="text-[#374151] no-underline">
           hello@vitalityfitnesstavistock.com
         </a>
       </p>
@@ -100,7 +100,7 @@ export default function ConfirmPage() {
   return (
     <Suspense fallback={
       <div className="min-h-screen flex items-center justify-center">
-        <div className="w-8 h-8 border-[3px] border-[#00cc70] border-t-transparent rounded-full animate-spin" />
+        <div className="w-8 h-8 border-[3px] border-[#1f2937] border-t-transparent rounded-full animate-spin" />
       </div>
     }>
       <ConfirmContent />

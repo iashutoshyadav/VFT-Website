@@ -10,8 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         vft: {
-          cyan: "#00cc70",
-          "cyan-dark": "#00aa5d",
+          cyan: "#1f2937",
+          "cyan-dark": "#374151",
           teal: "#f1f5f9",
           "teal-mid": "#e2e8f0",
           "teal-light": "#64748b",
@@ -64,7 +64,7 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "hero-gradient": "linear-gradient(135deg, #0d2b1f 0%, #1a4a30 50%, #080f0b 100%)",
+        "hero-gradient": "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)",
       },
     },
   },

@@ -32,7 +32,7 @@ export default function FacilitiesSection() {
       <div className="max-w-290 mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-6">
-          <span className="inline-block bg-linear-to-br from-[#00cc70] to-[#00a85d] bg-clip-text text-transparent text-[0.72rem] font-extrabold tracking-[0.18em] uppercase mb-2.5">
+          <span className="inline-block text-[#374151] text-[0.72rem] font-extrabold tracking-[0.18em] uppercase mb-2.5">
             Why Choose VFT?
           </span>
 
@@ -73,7 +73,7 @@ export default function FacilitiesSection() {
 
                 <Link
                   href={card.href}
-                  className="inline-flex items-center gap-1.5 text-white no-underline text-[0.875rem] font-bold tracking-[0.01em] transition-[gap,color] duration-200 ease-in-out group-hover:text-[#00cc70] group-hover:gap-2.5"
+                  className="inline-flex items-center gap-1.5 text-white no-underline text-[0.875rem] font-bold tracking-[0.01em] transition-[gap,color] duration-200 ease-in-out group-hover:text-white/80 group-hover:gap-2.5"
                 >
                   {card.linkLabel}
                   <ArrowRight size={15} strokeWidth={2.5} />

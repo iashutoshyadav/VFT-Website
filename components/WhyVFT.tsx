@@ -35,20 +35,18 @@ export default function WhyVFT() {
 
         {/* Header */}
         <div className="flex flex-col items-center text-center justify-center mb-12 w-full">
-          <span className="text-[#00cc70] text-[11px] font-extrabold uppercase tracking-[0.14em] mb-3 block text-center w-full">
+          <span className="text-[#6b7280] text-[11px] font-extrabold uppercase tracking-[0.14em] mb-3 block text-center w-full">
             Why choose VFT?
           </span>
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-[#111827] mb-4 tracking-tight text-center w-full">
             Get the most from your gym
           </h2>
-          <div
-            className="text-[#6b7280] text-base md:text-lg font-medium leading-relaxed px-4 w-full block text-center"
-          >
+          <div className="text-[#6b7280] text-base md:text-lg font-medium leading-relaxed px-4 w-full block text-center">
             Everything you need to reach your goals — all under one roof, all in one membership.
           </div>
         </div>
 
-        {/* 3 image cards — exactly like PureGym's "Why PureGym?" */}
+        {/* 3 image cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {cards.map((card) => (
             <Link
@@ -62,12 +60,11 @@ export default function WhyVFT() {
                 style={{ backgroundImage: `url('${card.bg}')` }}
               />
 
-              {/* Single clean dark gradient overlay at bottom half */}
+              {/* Dark gradient overlay */}
               <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/35 to-transparent" />
 
               {/* Text bottom */}
               <div className="absolute inset-0 flex flex-col justify-end">
-                {/* Content wrapper with horizontal padding */}
                 <div className="px-6 md:px-8 pb-4">
                   <h3 className="text-white font-bold text-[24px] md:text-[26px] tracking-tight mb-2 leading-tight">
                     {card.title}
@@ -76,11 +73,9 @@ export default function WhyVFT() {
                     {card.desc}
                   </p>
                 </div>
-                
-                {/* Full-width divider line */}
+
                 <div className="w-full border-t border-white/20" />
-                
-                {/* Footer with padding */}
+
                 <div className="flex items-center justify-between px-6 md:px-8 pt-4 pb-6 md:pb-8">
                   <span className="text-white text-[15px] md:text-[16px] font-bold tracking-wide underline underline-offset-4 decoration-1 group-hover:text-white/90 transition-colors">
                     {card.linkText}

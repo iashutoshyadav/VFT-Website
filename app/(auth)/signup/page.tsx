@@ -76,7 +76,7 @@ export default function SignUpPage() {
   }
 
   const inputBase =
-    "w-full bg-[#f8fafc] border-[1.5px] border-[#e2e8f0] rounded-[10px] py-[0.8rem] pr-4 pl-11 text-[0.9rem] text-[#0f172a] outline-none transition-[border-color,background] duration-200 box-border focus:border-[#00cc70] focus:bg-white placeholder:text-[#94a3b8]";
+    "w-full bg-[#f8fafc] border-[1.5px] border-[#e2e8f0] rounded-[10px] py-[0.8rem] pr-4 pl-11 text-[0.9rem] text-[#0f172a] outline-none transition-[border-color,background] duration-200 box-border focus:border-[#374151] focus:bg-white placeholder:text-[#94a3b8]";
   const label =
     "block text-[#475569] text-[0.72rem] font-bold uppercase tracking-widest mb-[0.45rem]";
 
@@ -88,7 +88,7 @@ export default function SignUpPage() {
         <div className="absolute inset-0 bg-cover bg-center scale-[1.02]"
           style={{ backgroundImage: "url('/gym_floor.png')" }} />
         <div className="absolute inset-0 bg-linear-to-t from-black via-black/70 to-black/20" />
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(0,168,93,0.22)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(31,41,55,0.22)_0%,transparent_50%)]" />
 
         {/* Top bar */}
         <div className="relative z-10 flex items-center px-8 py-6">
@@ -98,13 +98,13 @@ export default function SignUpPage() {
 
         {/* Bottom content */}
         <div className="relative z-10 px-10 pb-10">
-          <div className="inline-flex items-center gap-[0.45rem] bg-[rgba(0,204,112,0.14)] border border-[rgba(0,204,112,0.28)] rounded-[20px] px-[0.9rem] py-[0.32rem] mb-5">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#00cc70] shadow-[0_0_8px_rgba(0,204,112,0.9)]" />
-            <span className="text-[#00cc70] text-[0.7rem] font-extrabold tracking-[0.12em] uppercase">Join VFT</span>
+          <div className="inline-flex items-center gap-[0.45rem] bg-white/10 border border-white/20 rounded-[20px] px-[0.9rem] py-[0.32rem] mb-5">
+            <div className="w-1.5 h-1.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.9)]" />
+            <span className="text-white text-[0.7rem] font-extrabold tracking-[0.12em] uppercase">Join VFT</span>
           </div>
           <h1 className="font-[Outfit,sans-serif] text-[clamp(2rem,3.2vw,3rem)] font-black text-white leading-[1.1] mb-4 tracking-[-0.03em]">
             Start your<br />
-            <span className="text-[#00cc70]">fitness journey.</span>
+            <span className="text-white/80">fitness journey.</span>
           </h1>
           <p className="text-white/55 text-[0.92rem] leading-[1.65] mb-8 max-w-xs">
             24/7 gym access, unlimited sauna, group classes & bespoke members app — all in one membership.
@@ -112,7 +112,7 @@ export default function SignUpPage() {
           <div className="space-y-2">
             {["No joining fee", "Cancel anytime", "Instant access", "Free first week"].map((perk) => (
               <div key={perk} className="flex items-center gap-3">
-                <CheckCircle className="w-4 h-4 text-[#00cc70] shrink-0" />
+                <CheckCircle className="w-4 h-4 text-white/80 shrink-0" />
                 <span className="text-white/70 text-[0.85rem]">{perk}</span>
               </div>
             ))}
@@ -242,15 +242,15 @@ export default function SignUpPage() {
               <div className="relative mt-[2px] shrink-0">
                 <input type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)}
                   className="sr-only" />
-                <div className={`w-4.5 h-4.5 rounded border-[1.5px] flex items-center justify-center transition-all ${agreed ? "bg-[#00cc70] border-[#00cc70]" : "bg-white border-[#cbd5e1]"}`}>
+                <div className={`w-4.5 h-4.5 rounded border-[1.5px] flex items-center justify-center transition-all ${agreed ? "bg-[#1f2937] border-[#1f2937]" : "bg-white border-[#cbd5e1]"}`}>
                   {agreed && <CheckCircle className="w-3 h-3 text-white" />}
                 </div>
               </div>
               <span className="text-[#64748b] text-[0.8rem] leading-relaxed">
                 I agree to the{" "}
-                <Link href="/terms" className="text-[#00a85d] font-semibold no-underline">Terms of Service</Link>{" "}
+                <Link href="/terms" className="text-[#374151] font-semibold no-underline">Terms of Service</Link>{" "}
                 and{" "}
-                <Link href="/privacy" className="text-[#00a85d] font-semibold no-underline">Privacy Policy</Link>.
+                <Link href="/privacy" className="text-[#374151] font-semibold no-underline">Privacy Policy</Link>.
               </span>
             </label>
 
@@ -258,7 +258,7 @@ export default function SignUpPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-linear-to-br from-[#00cc70] to-[#00a85d] text-white border-0 rounded-[10px] py-[0.95rem] font-[Outfit,sans-serif] font-extrabold text-[0.95rem] transition-all duration-200 tracking-[-0.01em] mt-[0.25rem] flex items-center justify-center gap-2 hover:-translate-y-px hover:shadow-[0_8px_24px_rgba(0,204,112,0.35)] disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer"
+              className="w-full bg-[#1f2937] text-white border-0 rounded-[10px] py-[0.95rem] font-[Outfit,sans-serif] font-extrabold text-[0.95rem] transition-all duration-200 tracking-[-0.01em] mt-[0.25rem] flex items-center justify-center gap-2 hover:bg-[#374151] hover:-translate-y-px hover:shadow-[0_8px_24px_rgba(31,41,55,0.35)] disabled:opacity-75 disabled:cursor-not-allowed cursor-pointer"
             >
               {loading ? (
                 <>

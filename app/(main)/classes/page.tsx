@@ -23,7 +23,7 @@ const categories = [
     description:
       "Push your limits and torch calories. These classes are for anyone who loves high energy, fast results.",
     image: "/insta_3.png",
-    bg: "#00cc70",
+    bg: "#374151",
     dark: true,
     imageLeft: true,
     isIntro: false,
@@ -76,7 +76,7 @@ export default function ClassesPage() {
       <section className="bg-white pt-32 pb-14 px-6 text-center">
         <div className="max-w-3xl mx-auto">
           {/* Breadcrumb */}
-          <nav className="flex items-center justify-center gap-2 text-sm font-semibold text-[#00a85d] mb-10">
+          <nav className="flex items-center justify-center gap-2 text-sm font-semibold text-[#374151] mb-10">
             <Link href="/" className="hover:underline">Home Page</Link>
             <ChevronRight className="w-4 h-4 text-[#94a3b8]" strokeWidth={2.5} />
             <span className="text-[#64748b]">Classes</span>
@@ -98,7 +98,7 @@ export default function ClassesPage() {
 
           <p className="text-[#64748b] text-[0.95rem]">
             See the class timetable and book your spot with the{" "}
-            <Link href="/contact#book" className="text-[#00a85d] underline underline-offset-2 hover:text-[#00cc70] transition-colors">
+            <Link href="/contact#book" className="text-[#374151] underline underline-offset-2 hover:text-[#1f2937] transition-colors">
               VFT Members App
             </Link>
             !

@@ -72,7 +72,6 @@ export default function ChatBot() {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, typing]);
 
-  // Hide on auth + dashboard routes
   if (pathname === "/member-login" || pathname.startsWith("/dashboard")) return null;
 
   const sendMessage = (text: string) => {
@@ -94,8 +93,8 @@ export default function ChatBot() {
         className={clsx(
           "fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all duration-300",
           open
-            ? "bg-white border border-[#e2e8f0] text-[#64748b] hover:bg-slate-50"
-            : "bg-[#00cc70] hover:bg-[#00a85d] hover:scale-105"
+            ? "bg-white border border-[#e2e8f0] text-[#64748b] hover:bg-[#f5f6f8]"
+            : "bg-[#1f2937] hover:bg-[#374151] hover:scale-105"
         )}
         aria-label="Open chat"
       >
@@ -118,20 +117,20 @@ export default function ChatBot() {
         <div className="bg-white border border-[#e2e8f0] rounded-2xl shadow-[0_20px_60px_rgba(15,23,42,0.15)] overflow-hidden flex flex-col max-h-130">
 
           {/* Header */}
-          <div className="bg-[#f8fafc] border-b border-[#e2e8f0] px-4 py-3.5 flex items-center justify-between">
+          <div className="bg-[#1f2937] border-b border-white/10 px-4 py-3.5 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-xl bg-[#00cc70] flex items-center justify-center">
+              <div className="w-8 h-8 rounded-xl bg-white/15 flex items-center justify-center">
                 <Bot className="w-4 h-4 text-white" />
               </div>
               <div>
-                <div className="text-[#0f172a] font-bold text-sm">VFT Assistant</div>
+                <div className="text-white font-bold text-sm">VFT Assistant</div>
                 <div className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 bg-[#00cc70] rounded-full animate-pulse" />
-                  <span className="text-[#00a85d] text-xs font-semibold">Online</span>
+                  <span className="w-1.5 h-1.5 bg-slate-300 rounded-full" />
+                  <span className="text-slate-300 text-xs font-semibold">Online</span>
                 </div>
               </div>
             </div>
-            <button onClick={() => setOpen(false)} className="text-[#94a3b8] hover:text-[#475569] transition-colors p-1">
+            <button onClick={() => setOpen(false)} className="text-white/50 hover:text-white transition-colors p-1">
               <Minimize2 className="w-4 h-4" />
             </button>
           </div>
@@ -142,10 +141,10 @@ export default function ChatBot() {
               <div key={msg.id} className={clsx("flex gap-2", msg.role === "user" ? "flex-row-reverse" : "flex-row")}>
                 <div className={clsx(
                   "w-7 h-7 rounded-lg flex items-center justify-center shrink-0 mt-0.5",
-                  msg.role === "bot" ? "bg-[#f0fdf8] border border-[#00cc70]/20" : "bg-[#f1f5f9]"
+                  msg.role === "bot" ? "bg-[#f5f6f8] border border-[#e5e7eb]" : "bg-[#f1f5f9]"
                 )}>
                   {msg.role === "bot"
-                    ? <Bot  className="w-3.5 h-3.5 text-[#00a85d]" />
+                    ? <Bot  className="w-3.5 h-3.5 text-[#374151]" />
                     : <User className="w-3.5 h-3.5 text-[#64748b]" />
                   }
                 </div>
@@ -153,7 +152,7 @@ export default function ChatBot() {
                   "max-w-[80%] px-3.5 py-2.5 rounded-xl text-sm leading-relaxed",
                   msg.role === "bot"
                     ? "bg-[#f1f5f9] text-[#0f172a] rounded-tl-sm"
-                    : "bg-[#00cc70] text-white font-medium rounded-tr-sm"
+                    : "bg-[#1f2937] text-white font-medium rounded-tr-sm"
                 )}>
                   {msg.text}
                 </div>
@@ -162,14 +161,14 @@ export default function ChatBot() {
 
             {typing && (
               <div className="flex gap-2">
-                <div className="w-7 h-7 rounded-lg bg-[#f0fdf8] border border-[#00cc70]/20 flex items-center justify-center shrink-0">
-                  <Bot className="w-3.5 h-3.5 text-[#00a85d]" />
+                <div className="w-7 h-7 rounded-lg bg-[#f5f6f8] border border-[#e5e7eb] flex items-center justify-center shrink-0">
+                  <Bot className="w-3.5 h-3.5 text-[#374151]" />
                 </div>
                 <div className="bg-[#f1f5f9] px-3.5 py-3 rounded-xl rounded-tl-sm flex gap-1 items-center">
                   {[0, 150, 300].map((delay) => (
                     <span
                       key={delay}
-                      className="w-1.5 h-1.5 bg-[#00cc70]/50 rounded-full animate-bounce"
+                      className="w-1.5 h-1.5 bg-[#9ca3af] rounded-full animate-bounce"
                       style={{ animationDelay: `${delay}ms` }}
                     />
                   ))}
@@ -185,7 +184,7 @@ export default function ChatBot() {
               <button
                 key={q}
                 onClick={() => sendMessage(q)}
-                className="shrink-0 text-[12px] px-3 py-1.5 rounded-full bg-[#f8fafc] border border-[#e2e8f0] text-[#00a85d] font-semibold hover:bg-[#f0fdf8] hover:border-[#00cc70]/30 transition-all cursor-pointer whitespace-nowrap"
+                className="shrink-0 text-[12px] px-3 py-1.5 rounded-full bg-[#f5f6f8] border border-[#e5e7eb] text-[#374151] font-semibold hover:bg-[#eef0f3] hover:border-[#d1d5db] transition-all cursor-pointer whitespace-nowrap"
               >
                 {q}
               </button>
@@ -208,7 +207,7 @@ export default function ChatBot() {
               <button
                 type="submit"
                 disabled={!input.trim()}
-                className="w-7 h-7 rounded-lg bg-[#00cc70] flex items-center justify-center disabled:opacity-30 hover:bg-[#00a85d] transition-colors cursor-pointer shrink-0"
+                className="w-7 h-7 rounded-lg bg-[#1f2937] flex items-center justify-center disabled:opacity-30 hover:bg-[#374151] transition-colors cursor-pointer shrink-0"
               >
                 <Send className="w-3.5 h-3.5 text-white" />
               </button>

@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section className="relative flex items-center justify-center overflow-hidden bg-white min-h-screen">
 
-      {/* Background photo - using the new naturally bright gym image */}
+      {/* Background photo */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 scale-[1.02] brightness-110 contrast-105"
         style={{
@@ -24,7 +24,7 @@ export default function HeroSection() {
         >
           Welcome to Feeling
           <br />
-          <span className="text-[#00cc70]">Vitality Good</span>
+          <span className="text-white/90">Vitality Good</span>
         </h1>
 
         {/* Subtitle */}

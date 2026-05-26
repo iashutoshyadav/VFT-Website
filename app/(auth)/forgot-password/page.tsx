@@ -74,7 +74,7 @@ export default function ForgotPasswordPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="you@example.com"
-                    className="w-full bg-[#f8fafc] border-[1.5px] border-[#e2e8f0] rounded-[10px] py-[0.8rem] pr-4 pl-11 text-[0.9rem] text-[#0f172a] outline-none focus:border-[#00cc70] focus:bg-white transition-all placeholder:text-[#94a3b8]"
+                    className="w-full bg-[#f8fafc] border-[1.5px] border-[#e2e8f0] rounded-[10px] py-[0.8rem] pr-4 pl-11 text-[0.9rem] text-[#0f172a] outline-none focus:border-[#374151] focus:bg-white transition-all placeholder:text-[#94a3b8]"
                   />
                 </div>
               </div>
@@ -82,7 +82,7 @@ export default function ForgotPasswordPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-linear-to-br from-[#00cc70] to-[#00a85d] text-white border-0 rounded-[10px] py-[0.95rem] font-[Outfit,sans-serif] font-extrabold text-[0.95rem] cursor-pointer transition-all hover:-translate-y-px hover:shadow-[0_8px_24px_rgba(0,204,112,0.35)] disabled:opacity-75 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full bg-[#1f2937] text-white border-0 rounded-[10px] py-[0.95rem] font-[Outfit,sans-serif] font-extrabold text-[0.95rem] cursor-pointer transition-all hover:bg-[#374151] hover:-translate-y-px hover:shadow-[0_8px_24px_rgba(31,41,55,0.35)] disabled:opacity-75 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {loading ? (
                   <>
@@ -97,15 +97,15 @@ export default function ForgotPasswordPage() {
           </>
         ) : (
           <div className="text-center py-4">
-            <div className="w-14 h-14 rounded-full bg-[#f0fdf8] border border-[#00cc70]/20 flex items-center justify-center mx-auto mb-4">
-              <CheckCircle className="w-7 h-7 text-[#00a85d]" />
+            <div className="w-14 h-14 rounded-full bg-[#f5f6f8] border border-[#e5e7eb] flex items-center justify-center mx-auto mb-4">
+              <CheckCircle className="w-7 h-7 text-[#374151]" />
             </div>
             <h2 className="font-[Outfit,sans-serif] text-[1.5rem] font-black text-[#0f172a] mb-2">Email sent!</h2>
             <p className="text-[#64748b] text-[0.9rem] mb-6 leading-[1.7]">
               Check your inbox at <strong className="text-[#0f172a]">{email}</strong> for the reset link.
             </p>
             <Link href="/member-login"
-              className="inline-flex items-center gap-2 text-[#00a85d] font-semibold text-[0.88rem] no-underline hover:text-[#00cc70]">
+              className="inline-flex items-center gap-2 text-[#374151] font-semibold text-[0.88rem] no-underline hover:text-[#1f2937]">
               <ArrowLeft className="w-3.5 h-3.5" />
               Back to sign in
             </Link>

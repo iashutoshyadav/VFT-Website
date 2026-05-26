@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <div id={id} className="mb-10">
-      <h2 className="font-[Outfit,sans-serif] text-[1.35rem] font-extrabold text-[#00a85d] mb-[0.85rem] tracking-[-0.02em]">
+      <h2 className="font-[Outfit,sans-serif] text-[1.35rem] font-extrabold text-[#374151] mb-[0.85rem] tracking-[-0.02em]">
         {title}
       </h2>
       <div className="text-[#475569] leading-[1.8] text-[0.95rem]">{children}</div>
@@ -64,8 +64,8 @@ export default function TermsPage() {
           <div className="max-w-[52rem] mx-auto">
 
             {/* Intro box */}
-            <div className="bg-[#f0fdf8] border border-[rgba(0,168,93,0.2)] rounded-xl px-6 py-5 mb-10 text-[#374151] text-[0.9rem] leading-[1.7]">
-              <strong className="text-[#00a85d]">Please read carefully:</strong> By joining Vitality Fitness Tavistock or using our facilities, website or app, you agree to these Terms of Use. These terms form part of your membership agreement with <strong>Vitality Fitness Tavistock Ltd</strong> (&ldquo;VFT&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;).
+            <div className="bg-[#f5f6f8] border border-[#e5e7eb] rounded-xl px-6 py-5 mb-10 text-[#374151] text-[0.9rem] leading-[1.7]">
+              <strong className="text-[#374151]">Please read carefully:</strong> By joining Vitality Fitness Tavistock or using our facilities, website or app, you agree to these Terms of Use. These terms form part of your membership agreement with <strong>Vitality Fitness Tavistock Ltd</strong> (&ldquo;VFT&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;).
             </div>
 
             <Section id="membership" title="1. Membership Terms">
@@ -213,7 +213,7 @@ export default function TermsPage() {
               <P>If you have a question or complaint regarding these terms or your membership, please contact us:</P>
               <P>
                 <strong>Vitality Fitness Tavistock Ltd</strong><br />
-                Email: <a href="mailto:hello@vitalityfitnesstavistock.com" className="text-[#00a85d] underline">hello@vitalityfitnesstavistock.com</a><br />
+                Email: <a href="mailto:hello@vitalityfitnesstavistock.com" className="text-[#374151] underline">hello@vitalityfitnesstavistock.com</a><br />
                 Phone: +44 1822 366335<br />
                 Address: Tavistock, Devon, UK
               </P>
@@ -224,7 +224,7 @@ export default function TermsPage() {
             <div className="border-t border-[#e5e7eb] pt-8 mt-4 flex items-center gap-4 flex-wrap">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-[0.4rem] text-[#00a85d] font-bold text-[0.9rem] no-underline"
+                className="inline-flex items-center gap-[0.4rem] text-[#374151] font-bold text-[0.9rem] no-underline"
               >
                 ← Contact Us
               </Link>

@@ -37,11 +37,11 @@ interface ActionTile {
 }
 
 const ACTIONS: ActionTile[] = [
-  { label: "Make a Booking",     href: "/dashboard/timetable",                    img: "/group_class.png"   },
-  { label: "Start a Membership", href: "/dashboard/membership",                   img: "/membership_bg.png" },
-  { label: "Online Shop",        href: "https://vft.clubright.co.uk/shop",        img: "/gym_floor.png",    external: true },
-  { label: "Contact us",         href: "/#contact",                               img: "/hero_gym_bg.png"   },
-  { label: "Wellness Walks",     href: "/wellness-walks",                         img: "/sauna.png"         },
+  { label: "Make a Booking", href: "/dashboard/timetable", img: "/booking.jpg" },
+  { label: "Start a Membership", href: "/dashboard/membership", img: "/membership.jpg" },
+  { label: "Online Shop", href: "https://vft.clubright.co.uk/shop", img: "/shop.png", external: true },
+  { label: "Contact us", href: "/#contact", img: "/contact.png" },
+  { label: "Wellness Walks", href: "/wellness-walks", img: "/wellness.png" },
 ];
 
 function fmtTime(t: string): string {
@@ -108,7 +108,7 @@ export default function DashboardPage() {
       setLoading(false);
     }
     load();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const firstName = profile?.full_name?.split(" ")[0] ?? "Member";
@@ -120,8 +120,8 @@ export default function DashboardPage() {
       {/* ── Welcome Hero ──────────────────────────────────── */}
       <div className="relative bg-[#0f172a] rounded-2xl overflow-hidden mb-5">
         {/* Decorative blobs */}
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(0,204,112,0.18)_0%,transparent_60%)]" />
-        <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-[radial-gradient(circle,rgba(0,204,112,0.1)_0%,transparent_70%)] -translate-y-1/2 translate-x-1/4" />
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(55,65,81,0.35)_0%,transparent_60%)]" />
+        <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.05)_0%,transparent_70%)] -translate-y-1/2 translate-x-1/4" />
         <div className="absolute bottom-0 left-1/4 w-48 h-48 rounded-full bg-[radial-gradient(circle,rgba(99,102,241,0.08)_0%,transparent_70%)]" />
 
         <div className="relative z-10 px-6 sm:px-8 py-8 sm:py-10">
@@ -142,8 +142,8 @@ export default function DashboardPage() {
                     Welcome to Vitality Fitness Tavistock
                   </p>
                   <div className="flex gap-2 flex-wrap">
-                    <span className="bg-[rgba(0,204,112,0.15)] border border-[rgba(0,204,112,0.3)] text-[#00cc70] text-[0.72rem] font-extrabold rounded-full px-3 py-1 flex items-center gap-1.5 tracking-wide uppercase">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#00cc70] shadow-[0_0_6px_rgba(0,204,112,0.8)]" />
+                    <span className="bg-white/10 border border-white/20 text-white/90 text-[0.72rem] font-extrabold rounded-full px-3 py-1 flex items-center gap-1.5 tracking-wide uppercase">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/80 shadow-[0_0_6px_rgba(255,255,255,0.4)]" />
                       {planLabel} Member
                     </span>
                     <span className="bg-white/8 border border-white/10 text-white/60 text-[0.72rem] font-bold rounded-full px-3 py-1 tracking-wide">
@@ -175,7 +175,7 @@ export default function DashboardPage() {
                     <p className="text-white/40 text-[0.65rem] font-bold uppercase tracking-widest mb-2">Next Class</p>
                     <p className="text-white/50 text-[0.82rem] mb-2">No upcoming classes</p>
                     <Link href="/dashboard/timetable"
-                      className="text-[#00cc70] text-[0.78rem] font-bold no-underline hover:underline">
+                      className="text-white/70 text-[0.78rem] font-bold no-underline hover:underline">
                       Book one now →
                     </Link>
                   </>
@@ -202,8 +202,8 @@ export default function DashboardPage() {
       )}
 
       {/* ── Motivational Quote Strip ──────────────────────── */}
-      <div className="bg-[#00cc70] rounded-xl px-5 py-3 mb-6">
-        <p className="text-white font-semibold text-[0.85rem] text-center m-0 leading-relaxed">
+      <div className="bg-[#1f2937] rounded-xl px-5 py-3 mb-6">
+        <p className="text-white/80 font-semibold text-[0.85rem] text-center m-0 leading-relaxed">
           {quote}
         </p>
       </div>
@@ -219,7 +219,7 @@ export default function DashboardPage() {
             <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
               style={{ backgroundImage: `url('${img}')` }} />
             <div className="absolute inset-0 bg-black/25" />
-            <div className="absolute bottom-0 left-0 right-0 bg-[#00cc70] px-4 py-3">
+            <div className="absolute bottom-0 left-0 right-0 bg-[#1f2937] px-4 py-3">
               <p className="text-white font-[Outfit,sans-serif] font-extrabold text-[0.95rem] m-0 text-center">{label}</p>
             </div>
           </Link>
@@ -235,7 +235,7 @@ export default function DashboardPage() {
             <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
               style={{ backgroundImage: `url('${img}')` }} />
             <div className="absolute inset-0 bg-black/25" />
-            <div className="absolute bottom-0 left-0 right-0 bg-[#00cc70] px-4 py-3">
+            <div className="absolute bottom-0 left-0 right-0 bg-[#1f2937] px-4 py-3">
               <p className="text-white font-[Outfit,sans-serif] font-extrabold text-[0.95rem] m-0 text-center">{label}</p>
             </div>
           </Link>
@@ -255,7 +255,7 @@ export default function DashboardPage() {
           </div>
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-[#00cc70] shrink-0" />
+              <div className="w-2 h-2 rounded-full bg-[#374151] shrink-0" />
               <span className="text-[#374151] text-[0.82rem] font-semibold">Open Now</span>
               <span className="text-[#94a3b8] text-[0.75rem]">· Closes 10pm</span>
             </div>
@@ -280,8 +280,8 @@ export default function DashboardPage() {
         {/* My Profile quick view */}
         <div className="bg-white border border-[#e5e7eb] rounded-2xl p-5">
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-9 h-9 rounded-xl bg-[#f0fdf8] flex items-center justify-center">
-              <User className="w-4.5 h-4.5 text-[#00a85d]" />
+            <div className="w-9 h-9 rounded-xl bg-[#f5f6f8] flex items-center justify-center">
+              <User className="w-4.5 h-4.5 text-[#374151]" />
             </div>
             <h3 className="font-[Outfit,sans-serif] font-extrabold text-[0.9rem] text-[#0f172a] m-0">My Profile</h3>
           </div>
@@ -293,7 +293,7 @@ export default function DashboardPage() {
           ) : (
             <>
               <p className="font-extrabold text-[0.95rem] text-[#0f172a] m-0 mb-0.5">{profile?.full_name}</p>
-              <span className="bg-[#f0fdf8] text-[#00a85d] border border-[rgba(0,168,93,0.2)] rounded-full px-2 py-0.5 text-[0.7rem] font-extrabold">
+              <span className="bg-[#f5f6f8] text-[#374151] border border-[#e5e7eb] rounded-full px-2 py-0.5 text-[0.7rem] font-extrabold">
                 {planLabel} Member
               </span>
               <div className="mt-4 pt-4 border-t border-[#f1f5f9]">
@@ -310,14 +310,14 @@ export default function DashboardPage() {
             </>
           )}
           <Link href="/dashboard/profile"
-            className="mt-3 flex items-center gap-1 text-[#00a85d] text-[0.78rem] font-bold no-underline hover:underline">
+            className="mt-3 flex items-center gap-1 text-[#374151] text-[0.78rem] font-bold no-underline hover:underline">
             Edit profile <ChevronRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
         {/* Recent notices / what's on */}
         <div className="bg-[#0f172a] rounded-2xl p-5 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-36 h-36 rounded-full bg-[radial-gradient(circle,rgba(0,204,112,0.1)_0%,transparent_70%)] -translate-y-1/3 translate-x-1/3" />
+          <div className="absolute top-0 right-0 w-36 h-36 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.05)_0%,transparent_70%)] -translate-y-1/3 translate-x-1/3" />
           <div className="relative z-10">
             <p className="text-white/40 text-[0.65rem] font-bold uppercase tracking-widest mb-3">What&apos;s On at VFT</p>
             <div className="space-y-3">
@@ -336,7 +336,7 @@ export default function DashboardPage() {
               ))}
             </div>
             <Link href="/dashboard/timetable"
-              className="mt-4 inline-flex items-center gap-1 text-[#00cc70] text-[0.78rem] font-bold no-underline hover:underline">
+              className="mt-4 inline-flex items-center gap-1 text-white/70 text-[0.78rem] font-bold no-underline hover:underline">
               See full timetable <ChevronRight className="w-3.5 h-3.5" />
             </Link>
           </div>

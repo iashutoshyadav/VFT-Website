@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <div id={id} className="mb-10">
-      <h2 className="font-[Outfit,sans-serif] text-[1.35rem] font-extrabold text-[#00a85d] mb-[0.85rem] tracking-[-0.02em]">
+      <h2 className="font-[Outfit,sans-serif] text-[1.35rem] font-extrabold text-[#374151] mb-[0.85rem] tracking-[-0.02em]">
         {title}
       </h2>
       <div className="text-[#475569] leading-[1.8] text-[0.95rem]">{children}</div>
@@ -64,8 +64,8 @@ export default function PrivacyPage() {
           <div className="max-w-[52rem] mx-auto">
 
             {/* Intro box */}
-            <div className="bg-[#f0fdf8] border border-[rgba(0,168,93,0.2)] rounded-xl px-6 py-5 mb-10 text-[#374151] text-[0.9rem] leading-[1.7]">
-              <strong className="text-[#00a85d]">Summary:</strong> Vitality Fitness Tavistock Ltd (&ldquo;VFT&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is committed to protecting your privacy. This policy explains what personal data we collect, why we collect it, how we use it, and your rights under UK GDPR and the Data Protection Act 2018.
+            <div className="bg-[#f5f6f8] border border-[#e5e7eb] rounded-xl px-6 py-5 mb-10 text-[#374151] text-[0.9rem] leading-[1.7]">
+              <strong className="text-[#374151]">Summary:</strong> Vitality Fitness Tavistock Ltd (&ldquo;VFT&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is committed to protecting your privacy. This policy explains what personal data we collect, why we collect it, how we use it, and your rights under UK GDPR and the Data Protection Act 2018.
             </div>
 
             <Section id="who-we-are" title="1. Who We Are">
@@ -159,7 +159,7 @@ export default function PrivacyPage() {
                 <Li><strong>Rights related to automated decision-making</strong> — not to be subject to solely automated decisions with significant effects</Li>
               </Ul>
               <P>
-                To exercise any of these rights, email us at <a href="mailto:hello@vitalityfitnesstavistock.com" className="text-[#00a85d] underline">hello@vitalityfitnesstavistock.com</a>. We will respond within 30 days. You also have the right to lodge a complaint with the <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-[#00a85d] underline">Information Commissioner&apos;s Office (ICO)</a>.
+                To exercise any of these rights, email us at <a href="mailto:hello@vitalityfitnesstavistock.com" className="text-[#374151] underline">hello@vitalityfitnesstavistock.com</a>. We will respond within 30 days. You also have the right to lodge a complaint with the <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-[#374151] underline">Information Commissioner&apos;s Office (ICO)</a>.
               </P>
             </Section>
 
@@ -197,7 +197,7 @@ export default function PrivacyPage() {
               <P>For all data protection enquiries, please contact:</P>
               <P>
                 <strong>Vitality Fitness Tavistock Ltd</strong><br />
-                Email: <a href="mailto:hello@vitalityfitnesstavistock.com" className="text-[#00a85d] underline">hello@vitalityfitnesstavistock.com</a><br />
+                Email: <a href="mailto:hello@vitalityfitnesstavistock.com" className="text-[#374151] underline">hello@vitalityfitnesstavistock.com</a><br />
                 Phone: +44 1822 366335<br />
                 Address: Tavistock, Devon, UK
               </P>
@@ -207,7 +207,7 @@ export default function PrivacyPage() {
             <div className="border-t border-[#e5e7eb] pt-8 mt-4 flex items-center gap-4 flex-wrap">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-[0.4rem] text-[#00a85d] font-bold text-[0.9rem] no-underline"
+                className="inline-flex items-center gap-[0.4rem] text-[#374151] font-bold text-[0.9rem] no-underline"
               >
                 ← Contact Us
               </Link>

@@ -12,7 +12,7 @@ interface NotifPref {
   email: boolean;
 }
 
-const inputCls = "w-full bg-[#f8fafc] border-[1.5px] border-[#e2e8f0] rounded-[10px] px-[0.85rem] py-[0.65rem] text-[0.88rem] text-[#0f172a] outline-none box-border focus:border-[#00cc70] transition-colors duration-150";
+const inputCls = "w-full bg-[#f8fafc] border-[1.5px] border-[#e2e8f0] rounded-[10px] px-[0.85rem] py-[0.65rem] text-[0.88rem] text-[#0f172a] outline-none box-border focus:border-[#374151] transition-colors duration-150";
 const labelCls = "block text-[#475569] text-[0.7rem] font-bold uppercase tracking-[0.1em] mb-[0.4rem]";
 
 function getInitials(name: string): string {
@@ -139,7 +139,7 @@ export default function ProfilePage() {
       {/* Avatar card */}
       <div className="flex items-center gap-5 bg-white border border-[#e5e7eb] rounded-2xl p-5 mb-5">
         <div className="relative">
-          <div className="w-18 h-18 rounded-full bg-linear-to-br from-[#00cc70] to-[#00a85d] flex items-center justify-center text-white font-[Outfit,sans-serif] font-black text-[1.4rem]">
+          <div className="w-18 h-18 rounded-full bg-[#374151] flex items-center justify-center text-white font-[Outfit,sans-serif] font-black text-[1.4rem]">
             {initials}
           </div>
           <button className="absolute bottom-0 right-0 w-6.5 h-6.5 rounded-full bg-[#111827] border-2 border-white flex items-center justify-center cursor-pointer">
@@ -149,7 +149,7 @@ export default function ProfilePage() {
         <div>
           <p className="font-[Outfit,sans-serif] font-extrabold text-[1.1rem] text-[#0f172a] mb-[0.1rem]">{fullName}</p>
           {memberSince && <p className="text-[#64748b] text-[0.82rem] m-0 mb-[0.4rem]">Member since {memberSince}</p>}
-          <span className="bg-[#f0fdf8] text-[#00a85d] border border-[rgba(0,168,93,0.2)] rounded-[20px] px-[0.65rem] py-[0.2rem] text-[0.72rem] font-extrabold">
+          <span className="bg-[#f5f6f8] text-[#374151] border border-[#e5e7eb] rounded-[20px] px-[0.65rem] py-[0.2rem] text-[0.72rem] font-extrabold">
             {planLabel(plan)} Member
           </span>
         </div>
@@ -193,7 +193,7 @@ export default function ProfilePage() {
               <button key={g} onClick={() => toggleGoal(g)}
                 className={clsx(
                   "px-4 py-[0.45rem] rounded-[20px] border-[1.5px] font-bold text-[0.82rem] cursor-pointer transition-all duration-150",
-                  active ? "border-[#00cc70] bg-[#f0fdf8] text-[#00a85d]" : "border-[#e5e7eb] bg-white text-[#64748b]"
+                  active ? "border-[#374151] bg-[#f5f6f8] text-[#1f2937]" : "border-[#e5e7eb] bg-white text-[#64748b]"
                 )}>
                 {active && "✓ "}{g}
               </button>
@@ -247,7 +247,7 @@ export default function ProfilePage() {
                   {(["sms", "email"] as const).map((key) => (
                     <td key={key} className="text-center px-3 py-[0.65rem]">
                       <input type="checkbox" checked={n[key]} onChange={() => toggleNotif(i, key)}
-                        className="w-4 h-4 cursor-pointer" style={{ accentColor: "#00cc70" }} />
+                        className="w-4 h-4 cursor-pointer" style={{ accentColor: "#374151" }} />
                     </td>
                   ))}
                 </tr>
@@ -263,7 +263,7 @@ export default function ProfilePage() {
       <button onClick={handleSave} disabled={saving}
         className={clsx(
           "w-full text-white border-0 rounded-xl py-[0.95rem] font-[Outfit,sans-serif] font-extrabold text-base cursor-pointer flex items-center justify-center gap-2 transition-[background] duration-200 disabled:opacity-70",
-          saved ? "bg-[#00a85d]" : "bg-[#00cc70]"
+          saved ? "bg-[#374151]" : "bg-[#1f2937]"
         )}>
         {saving
           ? <><Loader2 className="w-4.5 h-4.5 animate-spin" />Saving…</>

@@ -23,7 +23,7 @@ const schedule = [
     route: "Tavistock to Brentor",
     distance: "4.5 miles",
     difficulty: "Easy",
-    diffColor: "#00a85d",
+    diffColor: "#374151",
     duration: "~90 min",
     desc: "A gentle morning walk through the Tavy valley, perfect before work or as an active recovery session.",
   },
@@ -43,7 +43,7 @@ const schedule = [
     route: "Tamar Valley Riverside",
     distance: "3 miles",
     difficulty: "Easy",
-    diffColor: "#00a85d",
+    diffColor: "#374151",
     duration: "~60 min",
     desc: "A relaxed riverside stroll along the Tamar. Perfect for families, beginners, and post-leg-day recovery.",
   },
@@ -145,7 +145,7 @@ export default function WellnessWalksPage() {
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <p className="font-[Outfit,sans-serif] font-black text-[#0f172a] text-[1.1rem]">{walk.day}</p>
-                    <p className="text-[#00a85d] font-bold text-[0.85rem]">{walk.time}</p>
+                    <p className="text-[#374151] font-bold text-[0.85rem]">{walk.time}</p>
                   </div>
                   <span className="text-white text-[0.65rem] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wide"
                     style={{ background: walk.diffColor }}>
@@ -155,17 +155,17 @@ export default function WellnessWalksPage() {
                 <h3 className="font-black text-[#0f172a] text-[0.95rem] mb-3">{walk.route}</h3>
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center gap-2 text-[#64748b] text-[0.8rem]">
-                    <MapPin className="w-3.5 h-3.5 text-[#00a85d] shrink-0" />
+                    <MapPin className="w-3.5 h-3.5 text-[#374151] shrink-0" />
                     {walk.distance}
                   </div>
                   <div className="flex items-center gap-2 text-[#64748b] text-[0.8rem]">
-                    <Clock className="w-3.5 h-3.5 text-[#00a85d] shrink-0" />
+                    <Clock className="w-3.5 h-3.5 text-[#374151] shrink-0" />
                     {walk.duration}
                   </div>
                 </div>
                 <p className="text-[#64748b] text-[0.82rem] leading-relaxed mb-5">{walk.desc}</p>
                 <Link href="/member-login"
-                  className="flex items-center justify-center gap-1 w-full py-2.5 bg-[#f0fdf8] border border-[#00cc70]/25 rounded-lg text-[#00a85d] text-[0.82rem] font-bold no-underline hover:bg-[#00cc70] hover:text-white transition-all">
+                  className="flex items-center justify-center gap-1 w-full py-2.5 bg-[#f5f6f8] border border-[#e5e7eb] rounded-lg text-[#374151] text-[0.82rem] font-bold no-underline hover:bg-[#1f2937] hover:text-white transition-all">
                   Register <ChevronRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -191,8 +191,8 @@ export default function WellnessWalksPage() {
               const Icon = b.icon;
               return (
                 <div key={b.title} className="card p-6">
-                  <div className="w-11 h-11 rounded-xl bg-[#f0fdf8] border border-[#00cc70]/20 flex items-center justify-center mb-4">
-                    <Icon className="w-5 h-5 text-[#00a85d]" />
+                  <div className="w-11 h-11 rounded-xl bg-[#f5f6f8] border border-[#e5e7eb] flex items-center justify-center mb-4">
+                    <Icon className="w-5 h-5 text-[#374151]" />
                   </div>
                   <h3 className="font-black text-[#0f172a] text-[0.92rem] mb-2">{b.title}</h3>
                   <p className="text-[#64748b] text-[0.85rem] leading-relaxed">{b.desc}</p>
@@ -226,7 +226,7 @@ export default function WellnessWalksPage() {
       {/* ── CTA ── */}
       <section className="section-padding bg-[#0f172a]">
         <div className="container-max px-4 text-center">
-          <TreePine className="w-10 h-10 text-[#00cc70] mx-auto mb-4" />
+          <TreePine className="w-10 h-10 text-white/70 mx-auto mb-4" />
           <h2 className="text-2xl sm:text-4xl font-black text-white mb-4">
             Join Us This Weekend
           </h2>

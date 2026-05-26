@@ -104,7 +104,7 @@ const posts = [
 
 const catColors: Record<string, string> = {
   Training:       "bg-[#eff6ff] text-[#3b82f6]",
-  Nutrition:      "bg-[#f0fdf8] text-[#00a85d]",
+  Nutrition:      "bg-[#f5f6f8] text-[#374151]",
   Wellness:       "bg-[#faf5ff] text-[#a855f7]",
   "Member Stories": "bg-[#fff7ed] text-[#f97316]",
   News:           "bg-[#fef2f2] text-[#ef4444]",
@@ -138,7 +138,7 @@ export default function BlogPage() {
               <button key={cat}
                 className={`shrink-0 px-4 py-1.5 rounded-full text-[0.82rem] font-bold border transition-all ${cat === "All"
                   ? "bg-[#0f172a] text-white border-[#0f172a]"
-                  : "bg-white text-[#64748b] border-[#e2e8f0] hover:border-[#00cc70] hover:text-[#00a85d]"
+                  : "bg-white text-[#64748b] border-[#e2e8f0] hover:border-[#374151] hover:text-[#1f2937]"
                 }`}>
                 {cat}
               </button>
@@ -156,10 +156,10 @@ export default function BlogPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 {/* Photo placeholder */}
                 <div className="bg-linear-to-br from-[#0f172a] to-[#1f2937] min-h-[260px] flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(0,204,112,0.12)_0%,transparent_60%)]" />
+                  <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(55,65,81,0.25)_0%,transparent_60%)]" />
                   <div className="relative z-10 text-center">
                     <p className="text-[5rem] mb-2">{featured.emoji}</p>
-                    <span className="bg-[#00cc70] text-white text-[0.65rem] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest">
+                    <span className="bg-[#1f2937] text-white text-[0.65rem] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest">
                       Featured
                     </span>
                   </div>
@@ -203,7 +203,7 @@ export default function BlogPage() {
                   <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{post.readTime}</span>
                 </div>
                 <Link href="/blog"
-                  className="flex items-center gap-1 text-[#00a85d] text-[0.82rem] font-bold no-underline hover:underline">
+                  className="flex items-center gap-1 text-[#374151] text-[0.82rem] font-bold no-underline hover:underline">
                   Read more <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -220,7 +220,7 @@ export default function BlogPage() {
       {/* ── Newsletter CTA ── */}
       <section className="section-padding bg-[#f8fafc] border-t border-[#e2e8f0]">
         <div className="container-max px-4 max-w-2xl text-center">
-          <BookOpen className="w-10 h-10 text-[#00a85d] mx-auto mb-4" />
+          <BookOpen className="w-10 h-10 text-[#374151] mx-auto mb-4" />
           <h2 className="text-2xl sm:text-3xl font-black text-[#0f172a] mb-3">
             Get the VFT Newsletter
           </h2>
@@ -231,7 +231,7 @@ export default function BlogPage() {
             <input
               type="email"
               placeholder="your@email.com"
-              className="flex-1 border border-[#e2e8f0] rounded-lg px-4 py-3 text-[0.9rem] outline-none focus:border-[#00cc70] transition-colors"
+              className="flex-1 border border-[#e2e8f0] rounded-lg px-4 py-3 text-[0.9rem] outline-none focus:border-[#374151] transition-colors"
             />
             <button className="btn-primary shrink-0">Subscribe →</button>
           </div>

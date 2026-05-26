@@ -61,11 +61,11 @@ function Sidebar({
 
       {/* Member badge */}
       <div className="px-6 pt-4 pb-2">
-        <div className="bg-[rgba(0,204,112,0.1)] border border-[rgba(0,204,112,0.2)] rounded-lg px-3 py-2 flex items-center justify-between">
-          <span className="text-[#00cc70] text-[0.72rem] font-bold tracking-wider uppercase">
+        <div className="bg-white/8 border border-white/15 rounded-lg px-3 py-2 flex items-center justify-between">
+          <span className="text-white/90 text-[0.72rem] font-bold tracking-wider uppercase">
             {planLabel} Member
           </span>
-          <div className="w-2 h-2 rounded-full bg-[#00cc70] shadow-[0_0_6px_rgba(0,204,112,0.6)]" />
+          <div className="w-2 h-2 rounded-full bg-white/80 shadow-[0_0_6px_rgba(255,255,255,0.4)]" />
         </div>
       </div>
 
@@ -78,7 +78,7 @@ function Sidebar({
               className={clsx(
                 "flex items-center gap-3 px-3 py-[0.65rem] rounded-lg mb-0.5 no-underline transition-all duration-150",
                 active
-                  ? "bg-[rgba(0,204,112,0.1)] border-l-[3px] border-l-[#00cc70] text-[#00cc70]"
+                  ? "bg-white/10 border-l-[3px] border-l-white text-white"
                   : "bg-transparent border-l-[3px] border-l-transparent text-white/60 hover:text-white/90 hover:bg-white/5"
               )}>
               <Icon className="w-4.5 h-4.5 shrink-0" />
@@ -86,7 +86,7 @@ function Sidebar({
                 {label}
               </span>
               {label === "Notifications" && (
-                <span className="ml-auto bg-[#00cc70] text-white rounded-[10px] px-1.75 py-px text-[0.68rem] font-extrabold">3</span>
+                <span className="ml-auto bg-white/20 text-white rounded-[10px] px-1.75 py-px text-[0.68rem] font-extrabold">3</span>
               )}
             </Link>
           );
@@ -96,7 +96,7 @@ function Sidebar({
       {/* Bottom: user + logout */}
       <div className="px-6 py-4 border-t border-white/6">
         <div className="flex items-center gap-3 mb-[0.85rem]">
-          <div className="w-9.5 h-9.5 rounded-full bg-linear-to-br from-[#00cc70] to-[#00a85d] flex items-center justify-center shrink-0 text-white font-[Outfit,sans-serif] font-extrabold text-[0.85rem]">
+          <div className="w-9.5 h-9.5 rounded-full bg-[#374151] flex items-center justify-center shrink-0 text-white font-[Outfit,sans-serif] font-extrabold text-[0.85rem]">
             {initials}
           </div>
           <div className="min-w-0">

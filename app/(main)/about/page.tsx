@@ -67,8 +67,8 @@ export default function AboutPage() {
                 const Icon = v.icon;
                 return (
                   <div key={v.title} className="card p-5">
-                    <div className="w-10 h-10 rounded-xl bg-[#f0fdf8] border border-[#00cc70]/20 flex items-center justify-center mb-3">
-                      <Icon className="w-5 h-5 text-[#00a85d]" />
+                    <div className="w-10 h-10 rounded-xl bg-[#f5f6f8] border border-[#e5e7eb] flex items-center justify-center mb-3">
+                      <Icon className="w-5 h-5 text-[#374151]" />
                     </div>
                     <h3 className="text-[#0f172a] font-bold text-sm mb-1">{v.title}</h3>
                     <p className="text-[#94a3b8] text-xs leading-relaxed">{v.desc}</p>
@@ -95,15 +95,15 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {team.map((member) => (
               <div key={member.name} className="card p-6 text-center group">
-                <div className="w-16 h-16 rounded-2xl bg-[#f0fdf8] border border-[#00cc70]/20 flex items-center justify-center mx-auto mb-4 group-hover:border-[#00cc70]/35 transition-all">
-                  <member.icon className="w-7 h-7 text-[#00a85d]" />
+                <div className="w-16 h-16 rounded-2xl bg-[#f5f6f8] border border-[#e5e7eb] flex items-center justify-center mx-auto mb-4 group-hover:border-[#d1d5db] transition-all">
+                  <member.icon className="w-7 h-7 text-[#374151]" />
                 </div>
                 <h3 className="text-[#0f172a] font-bold text-base mb-0.5">{member.name}</h3>
-                <div className="text-[#00a85d] text-sm font-semibold mb-1.5">{member.role}</div>
+                <div className="text-[#374151] text-sm font-semibold mb-1.5">{member.role}</div>
                 <div className="text-[#94a3b8] text-xs mb-4">{member.speciality}</div>
                 <Link
                   href="/contact#book"
-                  className="inline-block text-xs px-4 py-2 rounded-lg border border-[#e2e8f0] text-[#64748b] hover:bg-[#f0fdf8] hover:text-[#00a85d] hover:border-[#00cc70]/30 transition-all"
+                  className="inline-block text-xs px-4 py-2 rounded-lg border border-[#e2e8f0] text-[#64748b] hover:bg-[#f5f6f8] hover:text-[#1f2937] hover:border-[#d1d5db] transition-all"
                 >
                   Book Session
                 </Link>

@@ -56,18 +56,18 @@ export default function MembershipCards() {
   return (
     <section
       id="membership"
-      className="py-14 relative overflow-hidden bg-[#f8f8f6]"
+      className="py-14 relative overflow-hidden bg-[#f5f6f8]"
     >
       <div className="max-w-[1160px] mx-auto px-6 relative z-[1]">
         {/* ── Header ── */}
         <div className="text-center mb-9">
-          <span className="inline-block bg-linear-to-br from-[#00cc70] to-[#00a85d] bg-clip-text text-transparent text-[0.72rem] font-extrabold tracking-[0.18em] uppercase mb-2.5">
+          <span className="inline-block text-[#374151] text-[0.72rem] font-extrabold tracking-[0.18em] uppercase mb-2.5">
             Membership Plans
           </span>
 
           <h2 className="text-[clamp(2rem,5vw,3rem)] font-black text-[#0f172a] tracking-[-0.03em] leading-[1.1] mb-3">
             Simple,{" "}
-            <span className="text-[#00cc70]">honest</span>{" "}
+            <span className="text-[#1f2937]">honest</span>{" "}
             pricing
           </h2>
 
@@ -76,7 +76,7 @@ export default function MembershipCards() {
           </p>
 
           {/* Billing Toggle */}
-          <div className="inline-flex items-center bg-[#e2e8f0] rounded-[30px] p-1 shadow-[inset_0_2px_4px_rgba(15,23,42,0.06)] relative w-60 h-11 z-10">
+          <div className="inline-flex items-center bg-[#e5e7eb] rounded-[30px] p-1 shadow-[inset_0_2px_4px_rgba(15,23,42,0.05)] relative w-60 h-11 z-10">
             {/* Sliding backdrop indicator */}
             <div
               className={clsx(
@@ -102,7 +102,7 @@ export default function MembershipCards() {
               )}
             >
               Annual
-              <span className="pulse-discount-badge inline-block text-[0.58rem] font-black bg-[linear-gradient(135deg,#00cc70_0%,#00a85d_100%)] text-white py-[1.5px] px-[6px] rounded-full tracking-[0.02em]">
+              <span className="pulse-discount-badge inline-block text-[0.58rem] font-black bg-[#1f2937] text-white py-[1.5px] px-[6px] rounded-full tracking-[0.02em]">
                 17% OFF
               </span>
             </button>
@@ -121,7 +121,7 @@ export default function MembershipCards() {
                 className={clsx(
                   "rounded-2xl flex flex-col overflow-hidden transition-all duration-300 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.09)]",
                   plan.featured
-                    ? "bg-[#dff0ea] shadow-[0_4px_16px_rgba(0,204,112,0.1)]"
+                    ? "bg-white shadow-[0_4px_24px_rgba(0,0,0,0.10)] ring-2 ring-[#d1d5db]"
                     : "bg-white shadow-[0_4px_16px_rgba(0,0,0,0.06)]"
                 )}
               >
@@ -132,7 +132,7 @@ export default function MembershipCards() {
                       {plan.name}
                     </h3>
                     {plan.badge && (
-                      <span className="inline-block shrink-0 text-[0.65rem] font-extrabold tracking-[0.06em] uppercase bg-[#00cc70] text-white py-[4px] px-[10px] rounded-full mt-[3px]">
+                      <span className="inline-block shrink-0 text-[0.65rem] font-extrabold tracking-[0.06em] uppercase bg-[#1f2937] text-white py-[4px] px-[10px] rounded-full mt-[3px]">
                         {plan.badge}
                       </span>
                     )}
@@ -147,7 +147,7 @@ export default function MembershipCards() {
                   <ul className="flex flex-col gap-[10px] flex-1 mb-6 list-none p-0 m-0">
                     {plan.features.map((f) => (
                       <li key={f} className="flex items-center gap-3">
-                        <div className="w-5 h-5 rounded-full bg-[#00cc70] flex items-center justify-center shrink-0">
+                        <div className="w-5 h-5 rounded-full bg-[#374151] flex items-center justify-center shrink-0">
                           <Check size={11} color="white" strokeWidth={3} />
                         </div>
                         <span className="text-[0.875rem] text-[#334155] font-medium leading-[1.3]">
@@ -176,7 +176,7 @@ export default function MembershipCards() {
                     </p>
 
                     {billing === "annual" && (
-                      <p className="text-[0.72rem] text-[#00cc70] font-bold mb-2">
+                      <p className="text-[0.72rem] text-[#374151] font-bold mb-2">
                         Save £{yearlySaving} a year
                       </p>
                     )}
@@ -192,12 +192,12 @@ export default function MembershipCards() {
                         target="_blank"
                         className="group flex items-center justify-between no-underline"
                       >
-                        <span className="text-[#0f172a] text-[0.9rem] font-bold underline decoration-[#0f172a]/40 underline-offset-4 group-hover:text-[#00cc70] group-hover:decoration-[#00cc70] transition-colors duration-200">
+                        <span className="text-[#0f172a] text-[0.9rem] font-bold underline decoration-[#0f172a]/40 underline-offset-4 group-hover:text-[#374151] group-hover:decoration-[#374151] transition-colors duration-200">
                           Join now
                         </span>
                         <ChevronRight
                           strokeWidth={2.5}
-                          className="w-5 h-5 text-[#0f172a] group-hover:text-[#00cc70] group-hover:translate-x-1 transition-all duration-200"
+                          className="w-5 h-5 text-[#0f172a] group-hover:text-[#374151] group-hover:translate-x-1 transition-all duration-200"
                         />
                       </Link>
                     </div>
@@ -211,11 +211,11 @@ export default function MembershipCards() {
         {/* ── Footer note ── */}
         <div className="text-center mt-7">
           <p className="inline-flex items-center gap-2 text-[#64748b] text-[0.85rem]">
-            <span className="text-[#00cc70] font-bold">✓</span>
+            <span className="text-[#374151] font-bold">✓</span>
             No contracts &nbsp;·&nbsp;
-            <span className="text-[#00cc70] font-bold">✓</span>
+            <span className="text-[#374151] font-bold">✓</span>
             Cancel anytime &nbsp;·&nbsp;
-            <span className="text-[#00cc70] font-bold">✓</span>
+            <span className="text-[#374151] font-bold">✓</span>
             Student &amp; corporate discounts available
           </p>
         </div>

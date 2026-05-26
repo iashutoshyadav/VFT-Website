@@ -35,7 +35,7 @@ export default function DashCard({
         {linkHref && (
           <Link
             href={linkHref}
-            className="text-[#00a85d] text-[0.78rem] font-bold no-underline"
+            className="text-[#374151] text-[0.78rem] font-bold no-underline"
           >
             {linkLabel}
           </Link>

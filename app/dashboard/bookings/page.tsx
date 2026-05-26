@@ -115,13 +115,13 @@ function ReviewModal({
   if (submitted) {
     return (
       <div className="text-center py-6">
-        <div className="w-13 h-13 rounded-full bg-[#f0fdf8] border border-[rgba(0,168,93,0.2)] flex items-center justify-center mx-auto mb-[0.85rem]">
-          <CheckCircle className="w-6.5 h-6.5 text-[#00a85d]" />
+        <div className="w-13 h-13 rounded-full bg-[#f5f6f8] border border-[#e5e7eb] flex items-center justify-center mx-auto mb-[0.85rem]">
+          <CheckCircle className="w-6.5 h-6.5 text-[#374151]" />
         </div>
         <h3 className="font-[Outfit,sans-serif] font-black text-[1.15rem] text-[#0f172a] mb-1">Review Submitted!</h3>
         <p className="text-[#64748b] text-[0.85rem] mb-[1.1rem]">Thanks for your feedback. +15 pts earned!</p>
         <button onClick={onClose}
-          className="bg-[#00cc70] text-white border-0 rounded-lg px-[1.4rem] py-[0.6rem] font-[Outfit,sans-serif] font-bold cursor-pointer">
+          className="bg-[#1f2937] text-white border-0 rounded-lg px-[1.4rem] py-[0.6rem] font-[Outfit,sans-serif] font-bold cursor-pointer">
           Done
         </button>
       </div>
@@ -154,7 +154,7 @@ function ReviewModal({
       />
       {error && <p className="text-[#ef4444] text-[0.82rem] mb-3">{error}</p>}
       <button onClick={handleSubmit} disabled={loading}
-        className="w-full bg-[#00cc70] text-white border-0 rounded-[10px] py-[0.8rem] font-[Outfit,sans-serif] font-extrabold text-[0.92rem] cursor-pointer flex items-center justify-center gap-2 disabled:opacity-60">
+        className="w-full bg-[#1f2937] text-white border-0 rounded-[10px] py-[0.8rem] font-[Outfit,sans-serif] font-extrabold text-[0.92rem] cursor-pointer flex items-center justify-center gap-2 disabled:opacity-60">
         {loading && <Loader2 className="w-4 h-4 animate-spin" />}
         Submit Review ⭐
       </button>
@@ -291,14 +291,14 @@ export default function BookingsPage() {
           {upcoming.length === 0 ? (
             <div className="bg-white border border-[#e5e7eb] rounded-2xl p-12 text-center">
               <p className="text-[#94a3b8] text-[0.9rem] mb-4">No upcoming classes booked.</p>
-              <Link href="/dashboard/timetable" className="text-[#00a85d] font-bold text-[0.9rem]">Browse timetable →</Link>
+              <Link href="/dashboard/timetable" className="text-[#374151] font-bold text-[0.9rem]">Browse timetable →</Link>
             </div>
           ) : (
             <div className="flex flex-col gap-3">
               {upcoming.map((b) => (
                 <div key={b.id} className="bg-white border border-[#e5e7eb] rounded-[14px] px-5 py-[1.1rem] flex items-center gap-4 flex-wrap">
-                  <div className="w-10.5 h-10.5 rounded-xl bg-[#f0fdf8] border border-[rgba(0,168,93,0.15)] flex items-center justify-center shrink-0">
-                    <CheckCircle className="w-5 h-5 text-[#00a85d]" />
+                  <div className="w-10.5 h-10.5 rounded-xl bg-[#f5f6f8] border border-[#e5e7eb] flex items-center justify-center shrink-0">
+                    <CheckCircle className="w-5 h-5 text-[#374151]" />
                   </div>
                   <div className="flex-1 min-w-35">
                     <p className="font-extrabold text-[0.95rem] text-[#0f172a] m-0 mb-[0.15rem]">{b.name}</p>
@@ -338,12 +338,12 @@ export default function BookingsPage() {
                   <div key={b.id} className="bg-white border border-[#e5e7eb] rounded-[14px] px-5 py-[1.1rem] flex items-center gap-4 flex-wrap">
                     <div className={clsx(
                       "w-10.5 h-10.5 rounded-xl flex items-center justify-center shrink-0",
-                      attended ? "bg-[#f0fdf8] border border-[rgba(0,168,93,0.15)]"
+                      attended ? "bg-[#f5f6f8] border border-[#e5e7eb]"
                         : noShow ? "bg-[#fef2f2] border border-[rgba(239,68,68,0.15)]"
                         : "bg-[#f8fafc] border border-[#e5e7eb]"
                     )}>
                       {attended
-                        ? <CheckCircle className="w-5 h-5 text-[#00a85d]" />
+                        ? <CheckCircle className="w-5 h-5 text-[#374151]" />
                         : noShow
                         ? <XCircle className="w-5 h-5 text-[#ef4444]" />
                         : <CheckCircle className="w-5 h-5 text-[#94a3b8]" />}
@@ -355,7 +355,7 @@ export default function BookingsPage() {
                     <div className="flex items-center gap-[0.6rem] shrink-0">
                       <span className={clsx(
                         "rounded-[20px] px-[0.6rem] py-[0.2rem] text-[0.72rem] font-extrabold border",
-                        attended ? "bg-[#f0fdf8] text-[#00a85d] border-[rgba(0,168,93,0.2)]"
+                        attended ? "bg-[#f5f6f8] text-[#374151] border-[#e5e7eb]"
                           : noShow ? "bg-[#fef2f2] text-[#ef4444] border-[rgba(239,68,68,0.2)]"
                           : "bg-[#f8fafc] text-[#64748b] border-[#e5e7eb]"
                       )}>

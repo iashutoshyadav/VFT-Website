@@ -136,8 +136,8 @@ export default function PersonalTrainingPage() {
               const Icon = b.icon;
               return (
                 <div key={b.title} className="card p-6">
-                  <div className="w-11 h-11 rounded-xl bg-[#f0fdf8] border border-[#00cc70]/20 flex items-center justify-center mb-4">
-                    <Icon className="w-5 h-5 text-[#00a85d]" />
+                  <div className="w-11 h-11 rounded-xl bg-[#f5f6f8] border border-[#e5e7eb] flex items-center justify-center mb-4">
+                    <Icon className="w-5 h-5 text-[#374151]" />
                   </div>
                   <h3 className="font-black text-[#0f172a] text-[0.95rem] mb-2">{b.title}</h3>
                   <p className="text-[#64748b] text-[0.85rem] leading-relaxed">{b.desc}</p>
@@ -163,15 +163,15 @@ export default function PersonalTrainingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {packages.map((pkg) => (
               <div key={pkg.sessions} className={`rounded-2xl p-7 relative ${pkg.popular
-                ? "bg-[#0f172a] border-2 border-[#00cc70] shadow-[0_8px_40px_rgba(0,204,112,0.2)]"
+                ? "bg-[#0f172a] border-2 border-[#374151] shadow-[0_8px_40px_rgba(55,65,81,0.2)]"
                 : "bg-white border-2 border-[#e2e8f0]"
               }`}>
                 {pkg.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#00cc70] text-white text-[0.65rem] font-extrabold px-4 py-1 rounded-full uppercase tracking-widest">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#374151] text-white text-[0.65rem] font-extrabold px-4 py-1 rounded-full uppercase tracking-widest">
                     Most Popular
                   </div>
                 )}
-                <p className={`text-[0.72rem] font-extrabold uppercase tracking-widest mb-2 ${pkg.popular ? "text-[#00cc70]" : "text-[#64748b]"}`}>
+                <p className={`text-[0.72rem] font-extrabold uppercase tracking-widest mb-2 ${pkg.popular ? "text-white/70" : "text-[#64748b]"}`}>
                   {pkg.sessions} Session{pkg.sessions > 1 ? "s" : ""} — {pkg.label}
                 </p>
                 <p className={`font-[Outfit,sans-serif] font-black text-[2.5rem] tracking-tight mb-1 ${pkg.popular ? "text-white" : "text-[#0f172a]"}`}>
@@ -183,14 +183,14 @@ export default function PersonalTrainingPage() {
                 <ul className="space-y-2.5 mb-8">
                   {pkg.features.map((f) => (
                     <li key={f} className="flex items-center gap-2.5">
-                      <CheckCircle className={`w-4 h-4 shrink-0 ${pkg.popular ? "text-[#00cc70]" : "text-[#00a85d]"}`} />
+                      <CheckCircle className={`w-4 h-4 shrink-0 ${pkg.popular ? "text-white/70" : "text-[#374151]"}`} />
                       <span className={`text-[0.83rem] ${pkg.popular ? "text-white/80" : "text-[#475569]"}`}>{f}</span>
                     </li>
                   ))}
                 </ul>
                 <Link href="/member-login"
                   className={`w-full flex items-center justify-center gap-1.5 py-3 rounded-lg font-[Outfit,sans-serif] font-bold text-[0.9rem] transition-all no-underline ${pkg.popular
-                    ? "bg-[#00cc70] text-white hover:bg-[#00a85d]"
+                    ? "bg-[#374151] text-white hover:bg-[#4b5563]"
                     : "bg-[#0f172a] text-white hover:bg-[#1e293b]"
                   }`}>
                   Book Now <ChevronRight className="w-4 h-4" />
@@ -221,24 +221,24 @@ export default function PersonalTrainingPage() {
               const Icon = t.icon;
               return (
                 <div key={t.name} className="card p-6 flex flex-col">
-                  <div className="w-14 h-14 rounded-2xl bg-[#f0fdf8] border border-[#00cc70]/20 flex items-center justify-center mb-4">
-                    <Icon className="w-7 h-7 text-[#00a85d]" />
+                  <div className="w-14 h-14 rounded-2xl bg-[#f5f6f8] border border-[#e5e7eb] flex items-center justify-center mb-4">
+                    <Icon className="w-7 h-7 text-[#374151]" />
                   </div>
                   <div className="flex items-center gap-2 mb-1">
                     <h3 className="font-black text-[#0f172a] text-[0.95rem]">{t.name}</h3>
                   </div>
-                  <p className="text-[#00a85d] text-[0.78rem] font-bold mb-0.5">{t.role}</p>
+                  <p className="text-[#374151] text-[0.78rem] font-bold mb-0.5">{t.role}</p>
                   <p className="text-[#94a3b8] text-[0.72rem] mb-3">{t.speciality} · {t.exp} exp.</p>
                   <p className="text-[#64748b] text-[0.8rem] leading-relaxed mb-4 flex-1">{t.bio}</p>
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     {t.quals.map((q) => (
-                      <span key={q} className="bg-[#f0fdf8] border border-[#00cc70]/20 text-[#00a85d] text-[0.65rem] font-bold px-2 py-0.5 rounded-full">
+                      <span key={q} className="bg-[#f5f6f8] border border-[#e5e7eb] text-[#374151] text-[0.65rem] font-bold px-2 py-0.5 rounded-full">
                         {q}
                       </span>
                     ))}
                   </div>
                   <Link href="/member-login"
-                    className="flex items-center justify-center gap-1 w-full text-[0.82rem] font-bold px-4 py-2 rounded-lg border border-[#e2e8f0] text-[#64748b] hover:bg-[#f0fdf8] hover:text-[#00a85d] hover:border-[#00cc70]/30 transition-all no-underline">
+                    className="flex items-center justify-center gap-1 w-full text-[0.82rem] font-bold px-4 py-2 rounded-lg border border-[#e2e8f0] text-[#64748b] hover:bg-[#f5f6f8] hover:text-[#374151] hover:border-[#d1d5db] transition-all no-underline">
                     Book with {t.name.split(" ")[0]}
                   </Link>
                 </div>

@@ -112,7 +112,7 @@ export default function AchievementsPage() {
                 </div>
               </>
             ) : (
-              <p className="text-[#00cc70] text-[0.8rem] font-bold">All rewards unlocked! 🎉</p>
+              <p className="text-white/80 text-[0.8rem] font-bold">All rewards unlocked! 🎉</p>
             )}
           </div>
           <div className="flex gap-2">
@@ -138,18 +138,18 @@ export default function AchievementsPage() {
               <div key={r.label} className={clsx(
                 "rounded-xl p-4",
                 locked ? "bg-[#f8fafc] border border-[#e5e7eb] opacity-70"
-                       : "bg-[#f0fdf8] border border-[rgba(0,168,93,0.2)]"
+                       : "bg-[#f5f6f8] border border-[#d1d5db]"
               )}>
                 <p className="text-[1.75rem] mb-[0.4rem]">{r.icon}</p>
                 <p className="font-extrabold text-[0.92rem] text-[#0f172a] mb-[0.1rem]">{r.label}</p>
                 <p className="text-[#64748b] text-[0.78rem] mb-3">{r.desc}</p>
                 <div className="flex items-center justify-between">
                   <span className={clsx("font-[Outfit,sans-serif] font-black text-[0.9rem]",
-                    locked ? "text-[#94a3b8]" : "text-[#00a85d]")}>{r.pts} pts</span>
+                    locked ? "text-[#94a3b8]" : "text-[#374151]")}>{r.pts} pts</span>
                   <button disabled={locked} className={clsx(
                     "border-0 rounded-lg px-3 py-[0.35rem] text-[0.75rem] font-bold",
                     locked ? "bg-[#e5e7eb] text-[#9ca3af] cursor-not-allowed"
-                           : "bg-[#00cc70] text-white cursor-pointer"
+                           : "bg-[#1f2937] text-white cursor-pointer"
                   )}>
                     {locked ? "🔒 Locked" : "Redeem"}
                   </button>
@@ -190,15 +190,15 @@ export default function AchievementsPage() {
             return (
               <div key={b.key} className={clsx(
                 "rounded-xl px-3 py-4 text-center relative",
-                earned ? "bg-[#f0fdf8] border border-[rgba(0,168,93,0.2)]"
+                earned ? "bg-[#f5f6f8] border border-[#d1d5db]"
                        : "bg-[#f8fafc] border border-[#e5e7eb] opacity-50"
               )}>
                 <p className="text-[2rem] m-0 mb-[0.4rem]">{b.icon}</p>
                 <p className={clsx("font-extrabold text-[0.78rem] m-0 mb-[0.15rem]",
-                  earned ? "text-[#00a85d]" : "text-[#94a3b8]")}>{b.label}</p>
+                  earned ? "text-[#374151]" : "text-[#94a3b8]")}>{b.label}</p>
                 <p className="text-[#94a3b8] text-[0.68rem] m-0 mb-[0.4rem] leading-[1.4]">{b.desc}</p>
                 <span className={clsx("text-[0.68rem] font-extrabold",
-                  earned ? "text-[#00a85d]" : "text-[#9ca3af]")}>+{b.pts} pts</span>
+                  earned ? "text-[#374151]" : "text-[#9ca3af]")}>+{b.pts} pts</span>
                 {!earned && (
                   <div className="absolute top-1.5 right-1.5 text-[0.7rem]">🔒</div>
                 )}
