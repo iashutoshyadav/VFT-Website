@@ -45,7 +45,7 @@ export default function HeroSection() {
 
       {/* Play Video button (bottom right corner) */}
       <a
-        href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        href=""
         target="_blank"
         rel="noopener noreferrer"
         className="absolute bottom-8 right-8 z-10 bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-sm text-white p-3 rounded-full flex items-center justify-center transition-all group cursor-pointer"

@@ -1,6 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle, X, Send, Bot, User, Minimize2 } from "lucide-react";
+import { MessageCircle, X, Send, Bot, User, Minimize2, Trash2 } from "lucide-react";
 import { clsx } from "clsx";
 import { usePathname } from "next/navigation";
 
@@ -50,10 +50,14 @@ function keywordFallback(input: string): string {
 }
 
 const quickQuestions = [
-  "What are your hours?",
-  "How much is membership?",
-  "Do you have a sauna?",
-  "Book a free trial",
+  { icon: "🕐", text: "What are your hours?" },
+  { icon: "💰", text: "How much is membership?" },
+  { icon: "🧖", text: "Do you have a sauna?" },
+  { icon: "🆓", text: "Book a free trial" },
+  { icon: "📅", text: "What classes do you offer?" },
+  { icon: "💪", text: "Personal training packages?" },
+  { icon: "📍", text: "Where are you located?" },
+  { icon: "❌", text: "How do I cancel?" },
 ];
 
 export default function ChatBot() {
@@ -66,6 +70,13 @@ export default function ChatBot() {
     { id: nextId(), role: "bot", text: "Hi! I'm your VFT assistant. Ask me anything about membership, classes, the sauna, opening hours, or personal training!" },
   ]);
   const bottomRef = useRef<HTMLDivElement>(null);
+
+  const clearChat = () => {
+    setMessages([{ id: nextId(), role: "bot", text: "Hi! I'm your VFT assistant. Ask me anything about membership, classes, the sauna, opening hours, or personal training!" }]);
+    setHistory([]);
+    setInput("");
+    setTyping(false);
+  };
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -153,9 +164,18 @@ export default function ChatBot() {
                 </div>
               </div>
             </div>
-            <button onClick={() => setOpen(false)} className="text-white/50 hover:text-white transition-colors p-1">
-              <Minimize2 className="w-4 h-4" />
-            </button>
+            <div className="flex items-center gap-1">
+              <button
+                onClick={clearChat}
+                title="Clear chat"
+                className="text-white/50 hover:text-red-400 transition-colors p-1 rounded-lg hover:bg-white/10"
+              >
+                <Trash2 className="w-4 h-4" />
+              </button>
+              <button onClick={() => setOpen(false)} className="text-white/50 hover:text-white transition-colors p-1 rounded-lg hover:bg-white/10">
+                <Minimize2 className="w-4 h-4" />
+              </button>
+            </div>
           </div>
 
           {/* Messages */}
@@ -198,11 +218,12 @@ export default function ChatBot() {
           </div>
 
           {/* Quick questions */}
-          <div className="px-3 pb-2 flex gap-1.5 overflow-x-auto">
+          <div className="px-3 pb-2 flex gap-1.5 overflow-x-auto scrollbar-hide">
             {quickQuestions.map((q) => (
-              <button key={q} onClick={() => sendMessage(q)}
-                className="shrink-0 text-[12px] px-3 py-1.5 rounded-full bg-[#f5f6f8] border border-[#e5e7eb] text-[#374151] font-semibold hover:bg-[#eef0f3] hover:border-[#d1d5db] transition-all cursor-pointer whitespace-nowrap">
-                {q}
+              <button key={q.text} onClick={() => sendMessage(q.text)}
+                className="shrink-0 text-[12px] px-3 py-1.5 rounded-full bg-[#f5f6f8] border border-[#e5e7eb] text-[#374151] font-semibold hover:bg-[#eef0f3] hover:border-[#d1d5db] transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5">
+                <span>{q.icon}</span>
+                <span>{q.text}</span>
               </button>
             ))}
           </div>
