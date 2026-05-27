@@ -27,6 +27,8 @@ POLICIES: Guest pass £8/visit | Replacement key fob £10 | Free first week tria
 
 If you don't know something specific, direct them to call or email. Keep responses under 120 words. Never make up facts.`;
 
+type HistoryItem = { role: "user" | "assistant"; content: string };
+
 export async function POST(req: NextRequest) {
   const { message, history } = await req.json();
 
@@ -34,29 +36,35 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Message required." }, { status: 400 });
   }
 
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey || apiKey === "your_anthropic_api_key") {
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey || apiKey === "your_gemini_api_key") {
     return NextResponse.json({ error: "AI not configured." }, { status: 503 });
   }
 
-  // Keep last 8 messages for context, avoid huge payloads
-  const recent = (history ?? []).slice(-8);
-  const messages = [...recent, { role: "user", content: message.trim() }];
+  // Keep last 8 messages for context
+  const recent: HistoryItem[] = (history ?? []).slice(-8);
 
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "x-api-key": apiKey,
-      "anthropic-version": "2023-06-01",
-      "content-type": "application/json",
-    },
-    body: JSON.stringify({
-      model: "claude-haiku-4-5-20251001",
-      max_tokens: 250,
-      system: SYSTEM,
-      messages,
-    }),
-  });
+  // Gemini uses "user" / "model" roles (not "assistant")
+  const contents = [
+    ...recent.map((m: HistoryItem) => ({
+      role: m.role === "assistant" ? "model" : "user",
+      parts: [{ text: m.content }],
+    })),
+    { role: "user", parts: [{ text: message.trim() }] },
+  ];
+
+  const res = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        system_instruction: { parts: [{ text: SYSTEM }] },
+        contents,
+        generationConfig: { maxOutputTokens: 250, temperature: 0.7 },
+      }),
+    }
+  );
 
   if (!res.ok) {
     return NextResponse.json({ error: "AI unavailable." }, { status: 502 });
@@ -64,7 +72,7 @@ export async function POST(req: NextRequest) {
 
   const data = await res.json();
   const reply =
-    data.content?.[0]?.text?.trim() ??
+    data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() ??
     "Sorry, I couldn't process that. Please call us on +44 1822 366335.";
 
   return NextResponse.json({ reply });
